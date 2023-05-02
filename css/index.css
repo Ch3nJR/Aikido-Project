@@ -2,6 +2,8 @@
   padding-top: 6rem;
 }
 
+/*Top landing section*/
+
 .landing-container {
   flex-direction: column;
   gap: 2rem;
@@ -19,4 +21,24 @@
   max-height: 100%;
   display: block;
   object-fit: cover;
+}
+
+/*Features section*/
+.feature-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-heading {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
