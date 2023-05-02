@@ -12,6 +12,7 @@ html {
 
 body {
   background-color: #fff;
+  color: #666362;
 }
 
 a {
@@ -80,17 +81,15 @@ p {
   opacity: 1;
 }
 
-#icon {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  margin-right: 0.938rem;
-  padding: 0rem 0.5rem;
-}
-
-.text {
-  white-space: nowrap;
-  padding-right: 0.938rem;
+.btn {
+  color: #fff;
+  background-color: #666362;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+  padding: 1rem 1.2rem;
+  letter-spacing: 1px;
+  width: 115px;
 }
 
 /*Container + Sections*/
@@ -99,7 +98,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-.section {
+section {
   position: relative;
   max-width: 1250px;
   margin-left: auto;
@@ -139,7 +138,7 @@ nav .wrapper {
 nav .logo,
 nav a,
 nav i {
-  color: black;
+  color: #666362;
 }
 
 nav .logo {
@@ -249,10 +248,13 @@ nav .logo {
   .left-nav {
     align-items: unset;
     padding: 0rem;
+    font-size: 1.7rem;
   }
 
   .right-nav {
     padding: 0rem;
+    font-size: 1.2rem;
+    justify-content: unset;
   }
 
   .left-nav-links,
@@ -270,7 +272,7 @@ nav .logo {
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #242526;
+  background-color: #666362;
   color: #fff;
   gap: 2rem;
   padding: 2rem 0rem;
