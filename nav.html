@@ -1,0 +1,65 @@
+<nav>
+  <div class="wrapper" id="navbar">
+    <div class="logo">
+      <a href="index.html"><span>aikiForest</span></a>
+    </div>
+
+    <div class="nav-links">
+      <a href="promotion.html" class="mobile-item">Promotions</a>
+      <a href="location.html" class="mobile-item">Location</a>
+      <a href="about.html" class="mobile-item">About</a>
+      <a href="trial.html" class="mobile-item">Trial</a>
+      <i class="bi bi-list spanlist"></i>
+    </div>
+  </div>
+</nav>
+
+<div id="nav-modal">
+  <div class="left-nav">
+    <div class="left-nav-links">
+      <a href="promotion.html">Promotions</a>
+      <a href="location.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="trial.html">Trial</a>
+    </div>
+  </div>
+
+  <div class="right-nav">
+    <div class="right-nav-links">
+      <a href="class.html">Classes</a>
+      <a href="program.html">Programmes</a>
+      <a href="workshop.html">Workshops</a>
+      <a href="product.html">Products</a>
+      <a href="resourcesMP.html">Resources</a>
+      <a href="happening.html">Happenings</a>
+      <a href="hire.html">Hiring</a>
+    </div>
+  </div>
+
+  <div class="x-nav">
+    <i class="bi bi-x" id="close-nav-modal"></i>
+  </div>
+</div>
+
+<script>
+  $("#nav-modal").fadeToggle(0);
+  $(".spanlist").on("click", function () {
+    $("html").addClass("scroll-lock");
+    $("body").addClass("scroll-lock");
+    $("#nav-modal").fadeToggle("slow");
+  });
+
+  $(".spanlist").on("mouseenter", function () {
+    $(this).children().removeClass("bi-list").addClass("bi-x");
+  });
+
+  $(".spanlist").on("mouseleave", function () {
+    $(this).children().removeClass("bi-x").addClass("bi-list");
+  });
+
+  $("#close-nav-modal").on("click", function () {
+    $("#nav-modal").fadeToggle("slow");
+    $("html").removeClass("scroll-lock");
+    $("body").removeClass("scroll-lock");
+  });
+</script>
