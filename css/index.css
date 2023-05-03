@@ -57,7 +57,10 @@
 }
 
 .benefit-text {
+  display: flex;
+  flex-direction: column;
   max-width: 400px;
+  gap: 1.2rem;
 }
 
 .benefit-img {
@@ -138,12 +141,17 @@
   max-height: 200px;
   opacity: 1;
   padding: 0rem 0.938rem 1.875rem 0.938rem;
+  font-size: 1rem;
 }
 
 /*Last cta section*/
 .cta-container {
   flex-direction: column;
   gap: 1rem;
+}
+
+.cta-container h2 {
+  text-align: center;
 }
 
 /*media queries*/
@@ -193,10 +201,6 @@
 
   .landing-container {
     height: unset;
-  }
-
-  .left-landing-box {
-    padding-right: 1.5rem;
   }
 
   .feature-container {
