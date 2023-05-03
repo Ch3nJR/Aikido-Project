@@ -184,6 +184,14 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .top-section {
+    padding-bottom: 0rem;
+  }
+
+  .landing-container {
+    height: unset;
+  }
+
   .left-landing-box {
     padding-right: 1.5rem;
   }
