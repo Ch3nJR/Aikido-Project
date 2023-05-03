@@ -49,9 +49,12 @@
 }
 
 .benefit {
-  display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.benefit-text {
+  max-width: 400px;
 }
 
 .benefit-img {
@@ -67,8 +70,11 @@
 
 /*Testimonial section*/
 .testimonial-container {
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  max-width: 100%;
   gap: 2rem;
+  margin: 0 auto;
 }
 
 .testimonial {
@@ -77,4 +83,118 @@
   gap: 1rem;
   border: 2px solid;
   padding: 2rem;
+}
+
+/*FAQ section*/
+.faq-title {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-title p {
+  padding: 0rem 1.5rem;
+}
+
+.questions-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question {
+  border-bottom: 1px solid #666362;
+}
+
+.question span {
+  font-size: 1rem;
+}
+
+.question button {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0.938rem;
+  border: none;
+  outline: none;
+  font-size: 1.375rem;
+  color: black;
+  cursor: pointer;
+}
+.question p {
+  font-size: 1.375rem;
+  max-height: 0;
+  opacity: 0;
+  line-height: 1.5;
+  overflow: hidden;
+  transition: all 0.6s ease;
+}
+
+/*for js*/
+.question p.show {
+  max-height: 200px;
+  opacity: 1;
+  padding: 0rem 0.938rem 1.875rem 0.938rem;
+}
+
+/*Last cta section*/
+.cta-container {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/*media queries*/
+/*Fix screen set when it hits 500px*/
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+  .landing-container,
+  .feature-container,
+  .benefit-container {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .benefit {
+    align-items: unset;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .landing-container,
+  .feature-container,
+  .benefit {
+    flex-direction: row;
+  }
+
+  .landing-container {
+    height: 50vh;
+  }
+
+  .benefit {
+    height: 80vh;
+  }
+
+  #reverse {
+    flex-direction: row-reverse;
+  }
+
+  .benefit-img img {
+    max-width: 350px;
+    max-height: 350px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .left-landing-box {
+    padding-right: 1.5rem;
+  }
+
+  .testimonial-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  section {
+    padding: 3rem 6rem 6rem;
+  }
 }
