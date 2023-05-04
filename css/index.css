@@ -7,6 +7,7 @@
 .landing-container {
   flex-direction: column;
   gap: 2rem;
+  height: 90vh;
 }
 
 .left-landing-box {
@@ -31,6 +32,7 @@
   max-width: 100%;
   gap: 2rem;
   margin: 0 auto;
+  /* padding-bottom: 6rem; */
 }
 
 .feature {
@@ -55,6 +57,7 @@
 .benefit {
   flex-direction: column;
   gap: 1.5rem;
+  height: 90vh;
 }
 
 .benefit-text {
@@ -182,7 +185,11 @@
   }
 
   .landing-container {
-    height: 50vh;
+    height: 90vh;
+  }
+
+  .feature-container {
+    padding-bottom: 0rem;
   }
 
   .benefit {
@@ -204,9 +211,9 @@
     padding-bottom: 0rem;
   }
 
-  .landing-container {
+  /* .landing-container {
     height: unset;
-  }
+  } */
 
   .feature-container {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
