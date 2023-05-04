@@ -21,6 +21,7 @@
   max-height: 100%;
   display: block;
   object-fit: cover;
+  overflow: hidden;
 }
 
 /*Features section*/
@@ -152,6 +153,10 @@
 
 .cta-container h2 {
   text-align: center;
+}
+
+.cta-text {
+  max-width: 350px;
 }
 
 /*media queries*/
