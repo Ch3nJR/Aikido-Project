@@ -57,7 +57,7 @@
 .benefit {
   flex-direction: column;
   gap: 1.5rem;
-  height: 90vh;
+  margin-bottom: 10rem;
 }
 
 .benefit-text {

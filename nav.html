@@ -16,7 +16,9 @@
 
 <div id="nav-modal">
   <div class="left-nav">
-    <div class="left-nav-links">
+    <div
+      class="left-nav-links animate__animated animate__fadeInLeft animate__slow"
+    >
       <a href="promotion.html">Promotions</a>
       <a href="location.html">Locations</a>
       <a href="about.html">About</a>
@@ -25,7 +27,9 @@
   </div>
 
   <div class="right-nav">
-    <div class="right-nav-links">
+    <div
+      class="right-nav-links animate__animated animate__fadeInLeft animate__slow"
+    >
       <a href="class.html">Classes</a>
       <a href="program.html">Programmes</a>
       <a href="workshop.html">Workshops</a>
@@ -42,11 +46,23 @@
 </div>
 
 <script>
+  //To create reveal animations
+  ScrollReveal({
+    reset: true,
+    duration: 2500,
+    delay: 400,
+  });
+
   $("#nav-modal").fadeToggle(0);
   $(".spanlist").on("click", function () {
     $("html").addClass("scroll-lock");
     $("body").addClass("scroll-lock");
     $("#nav-modal").fadeToggle("slow");
+    ScrollReveal().reveal(".left-nav-links, .right-nav-links", {
+      delay: 500,
+      origin: "left",
+      interval: 200,
+    });
   });
 
   $(".spanlist").on("mouseenter", function () {
@@ -61,5 +77,7 @@
     $("#nav-modal").fadeToggle("slow");
     $("html").removeClass("scroll-lock");
     $("body").removeClass("scroll-lock");
+    ScrollReveal().clean(".left-nav-links, .right-nav-links");
+    console.log("closing");
   });
 </script>
