@@ -192,10 +192,6 @@
     padding-bottom: 0rem;
   }
 
-  .benefit {
-    height: 80vh;
-  }
-
   #reverse {
     flex-direction: row-reverse;
   }
