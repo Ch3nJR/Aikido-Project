@@ -105,6 +105,10 @@ section {
   padding: 2rem;
 }
 
+.top-section {
+  padding-top: 6rem;
+}
+
 /* custom scroll bar */
 ::-webkit-scrollbar {
   width: 10px;
