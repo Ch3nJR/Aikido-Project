@@ -15,6 +15,7 @@
   flex-direction: column;
   width: 100%;
   gap: 1rem;
+  overflow: hidden;
 }
 
 .right-landing-box img {
@@ -32,7 +33,7 @@
   max-width: 100%;
   gap: 2rem;
   margin: 0 auto;
-  /* padding-bottom: 6rem; */
+  overflow: hidden;
 }
 
 .feature {
@@ -40,6 +41,7 @@
   flex-direction: column;
   gap: 1rem;
   line-height: 1.4rem;
+  overflow: hidden;
 }
 
 .feature-heading {
@@ -52,6 +54,7 @@
 .benefit-container {
   flex-direction: column;
   gap: 2rem;
+  overflow: hidden;
 }
 
 .benefit {
@@ -70,6 +73,7 @@
 .benefit-img {
   max-width: 500px;
   max-height: 500px;
+  overflow: hidden;
 }
 
 .benefit-img img {
