@@ -1,9 +1,6 @@
 /*Top landing section*/
 
 .landing-container {
-  /* flex-direction: column;
-  gap: 2rem;
-  height: 90vh; */
   background-image: url("../imgs/landingimage3.jpg");
   background-position: 70% 30%;
   background-repeat: no-repeat;
@@ -25,13 +22,13 @@
   color: #fff;
 }
 
-.right-landing-box img {
+/* .right-landing-box img {
   max-width: 100%;
   max-height: 100%;
   display: block;
   object-fit: cover;
   overflow: hidden;
-}
+} */
 
 /*Features section*/
 .feature-container {
@@ -188,7 +185,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .landing-container,
+  /* .landing-container, */
   .feature-container,
   .benefit {
     flex-direction: row;
@@ -220,10 +217,6 @@
   .top-section {
     padding-bottom: 0rem;
   }
-
-  /* .landing-container {
-    height: unset;
-  } */
 
   .feature-container {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
