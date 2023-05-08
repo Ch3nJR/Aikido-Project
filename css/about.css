@@ -27,13 +27,13 @@
 
 .values-container {
   flex-direction: column;
-  gap: 1rem;
+  gap: 4rem;
 }
 
 .values-group {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 4rem;
 }
 
 .values {
@@ -162,11 +162,11 @@
   }
 
   .values-container {
-    gap: 3rem;
+    gap: 5.5rem;
   }
 
   .values-group {
     flex-direction: row;
-    gap: 2rem;
+    gap: 5.5rem;
   }
 }
