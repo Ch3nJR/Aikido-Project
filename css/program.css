@@ -1,3 +1,4 @@
+/*Classes section*/
 .class-container {
   display: flex;
   flex-direction: column;
@@ -47,6 +48,39 @@
   gap: 0.6rem;
 }
 
+.schedule-pdf {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 #adultclass {
   padding-top: 3rem;
+}
+
+/*Media Queries*/
+@media only screen and (min-width: 768px) {
+  .desc-box {
+    width: 100%;
+  }
+
+  .desc-text {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .schedule-pdf {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .class {
+    flex-direction: row;
+  }
+
+  #adultclass {
+    flex-direction: row-reverse;
+  }
 }
