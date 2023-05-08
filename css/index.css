@@ -5,7 +5,7 @@
   gap: 2rem;
   height: 90vh; */
   background-image: url("../imgs/landingimage3.jpg");
-  background-position: center;
+  background-position: 70% 30%;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -176,7 +176,6 @@
 /*media queries*/
 /*Fix screen set when it hits 500px*/
 @media only screen and (min-width: 500px) and (max-width: 767px) {
-  .landing-container,
   .feature-container,
   .benefit-container {
     max-width: 500px;
