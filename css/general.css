@@ -83,7 +83,7 @@ p {
 
 .btn {
   color: #fff;
-  background-color: #666362;
+  background-color: #101010ac;
   font-size: 0.8rem;
   font-weight: 500;
   display: inline-block;
@@ -142,7 +142,8 @@ nav .wrapper {
 nav .logo,
 nav a,
 nav i {
-  color: #666362;
+  /* color: #666362; */
+  color: #fff;
 }
 
 nav .logo {
