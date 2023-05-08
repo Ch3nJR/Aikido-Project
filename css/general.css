@@ -239,6 +239,31 @@ nav .logo {
 }
 
 /*Nav responsiveness*/
+@media only screen and (min-width: 768px) {
+  #nav-modal {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .left-nav,
+  .right-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: unset;
+    flex-grow: unset;
+  }
+
+  .left-nav-links,
+  .right-nav-links {
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .mobile-item {
     display: none;
