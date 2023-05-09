@@ -58,7 +58,54 @@
   padding-top: 3rem;
 }
 
+/*Program intro section*/
+
+/*Programs & Workshop section*/
+.pw-container {
+  flex-direction: column;
+  gap: 8rem;
+  margin-bottom: 4rem;
+}
+
+.pw-item {
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pw-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 500px;
+}
+
+.pw-text p {
+  line-height: 1.5rem;
+}
+
+.pw-text a {
+  font-size: 1.6rem;
+  color: #666362;
+}
+
+.pw-img {
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.pw-img img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
 /*Media Queries*/
+@media only screen and (max-width: 393px) {
+  .program-intro h2 {
+    font-size: 1.2rem;
+  }
+}
 @media only screen and (min-width: 768px) {
   .desc-box {
     width: 100%;
@@ -86,6 +133,20 @@
   }
 
   #adultclass {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    flex-direction: row-reverse;
+  }
+
+  .pw-container {
+    gap: 15rem;
+  }
+
+  .pw-item {
+    flex-direction: row;
+  }
+
+  .reverse {
     flex-direction: row-reverse;
   }
 }
