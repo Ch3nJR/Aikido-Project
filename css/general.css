@@ -214,6 +214,11 @@ nav .logo {
   font-size: 2.5rem;
 }
 
+nav i:hover,
+.x-nav i:hover {
+  cursor: pointer;
+}
+
 #nav-modal > div:nth-child(1) > div a,
 #nav-modal > div:nth-child(2) > div a {
   color: black;
