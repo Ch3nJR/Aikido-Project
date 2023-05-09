@@ -1,0 +1,102 @@
+.top-section-rmp {
+  padding-top: 6rem;
+}
+
+.resources-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  max-width: 100%;
+  gap: 2.19rem;
+  margin: 0 auto;
+}
+.resources-list .img-card {
+  position: relative;
+  max-width: 100%;
+  height: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.resources-list .img-card .info {
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 1.25rem;
+  color: #fff;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.resources-list .img-card:hover img {
+  filter: unset;
+}
+
+.resources-list .img-card:hover .info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.resources-list .img-card .info h3 {
+  font-size: 1.5em;
+}
+
+.resources-list .img-card .info span {
+  font-size: 1.2em;
+}
+
+.resources-list .img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+@media only screen and (min-width: 499px) and (max-width: 560px) {
+  .resources-list {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 768px) {
+  .resources-list {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    padding: 0rem 4rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .resources-list {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    padding: 0rem 6rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1169px) {
+  .resources-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 1170px) and (max-width: 1369px) {
+  .resources-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 4rem 0rem;
+  }
+}
+
+@media only screen and (min-width: 1370px) and (max-width: 1809px) {
+  .resources-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 4rem 0rem;
+  }
+}
+
+@media only screen and (min-width: 1810px) {
+  .resources-list {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    padding: 5.2rem 0rem;
+  }
+}
