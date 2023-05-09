@@ -7,8 +7,12 @@
   background-color: #fff;
 }
 
-.btn {
+.button-container .btn {
   width: 208px;
+}
+
+.btn {
+  width: 145px;
 }
 
 /*Essential Basics section*/
