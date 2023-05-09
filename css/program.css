@@ -69,9 +69,14 @@
     justify-content: center;
   }
 
+  .schedule {
+    align-items: center;
+  }
+
   .schedule-pdf {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
