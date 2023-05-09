@@ -16,8 +16,14 @@ ScrollReveal({
 });
 
 //target elements, and specify options to create reveal animations
-ScrollReveal().reveal(".left-landing-box, .benefit-left", {
-  delay: 700,
+ScrollReveal().reveal(".left-landing-box", {
+  delay: 200,
+  origin: "top",
+});
+
+//target elements, and specify options to create reveal animations
+ScrollReveal().reveal(".benefit-left", {
+  delay: 500,
   origin: "left",
 });
 
