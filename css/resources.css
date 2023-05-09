@@ -1,0 +1,98 @@
+.hidden {
+  display: none !important;
+}
+
+.focus {
+  color: #666362;
+  background-color: #fff;
+}
+
+.btn {
+  width: 208px;
+}
+
+/*Essential Basics section*/
+.button-container {
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.button-container button:hover {
+  cursor: pointer;
+}
+
+.eb-container {
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.eb-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.eb-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.eb-item-text p {
+  line-height: 1.5rem;
+}
+
+.eb-item-img {
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.eb-item-img img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/*Media Queries*/
+@media only screen and (min-width: 560px) {
+  .eb-item-text {
+    max-width: 500px;
+  }
+
+  .eb-item-text p {
+    max-width: 500px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .button-container {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .item-container {
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .eb-item-img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .eb-item-text {
+    max-width: 600px;
+  }
+
+  .eb-item-text p {
+    width: 500px;
+  }
+}
