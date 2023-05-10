@@ -65,6 +65,10 @@
 }
 
 /*Grading Revision section*/
+.gr-item-text {
+  max-width: 200px;
+}
+
 .attribute-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -96,7 +100,8 @@
 
   .gr-item {
     flex-direction: row;
-    gap: 5rem;
+    gap: 10rem;
+    width: 600px;
   }
 
   .attribute-list {
