@@ -64,6 +64,20 @@
   display: block;
 }
 
+/*Grading Revision section*/
+.attribute-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  max-width: 100%;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.attribute {
+  display: flex;
+  justify-content: flex-start;
+}
+
 /*Media Queries*/
 @media only screen and (min-width: 560px) {
   .item-text {
@@ -79,6 +93,19 @@
   .button-container {
     flex-direction: row;
   }
+
+  .gr-item {
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .attribute-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .attribute {
+    justify-content: flex-end;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -90,6 +117,10 @@
   .item-img {
     max-width: 300px;
     max-height: 300px;
+  }
+
+  .gr-item-text {
+    width: 100%;
   }
 
   .item-text {
