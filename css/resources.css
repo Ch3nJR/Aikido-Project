@@ -11,8 +11,13 @@
   width: 208px;
 }
 
+button {
+  border: none;
+}
+
 .btn {
   width: 145px;
+  border: 1px solid black;
 }
 
 /*Essential Basics section*/
