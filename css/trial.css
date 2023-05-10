@@ -1,0 +1,63 @@
+.scrollToTop-btn {
+  display: none;
+}
+
+/*Contact Section*/
+.top-section-ctc {
+  padding-top: 6rem;
+  padding-bottom: 0rem;
+}
+
+.form-section {
+  padding-top: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+form {
+  height: 100vh;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 0.375rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+@media only screen and (min-width: 1024px) {
+  form {
+    padding: 0rem 4rem;
+  }
+
+  .top-section-ctc {
+    padding-left: 6rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  form {
+    padding: 0rem 6rem;
+  }
+
+  .top-section-ctc {
+    padding-left: 8rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  form {
+    padding: 0rem 14rem;
+  }
+
+  .top-section-ctc {
+    padding-left: 16rem;
+  }
+}

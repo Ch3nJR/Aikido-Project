@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aikiForest</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/trial.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!--Scroll to top btn-->
+    <div class="scrollToTop-btn flex-center">
+      <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!--Navigation bar-->
+    <div id="navBar"></div>
+
+    <section class="section top-section-ctc">
+      <h2>Book your first trial with us now!</h2>
+      <p>
+        *This is a payable trial of $37 per session where student is entitled to
+        a maximum of 2 trial sessions.
+      </p>
+    </section>
+
+    <!--Contact Form-->
+    <section class="section form-section">
+      <form action="https://formspree.io/f/xjvdjwqj" method="POST">
+        <div id="personTrial">
+          <label for="target">Who is this trial for?</label>
+          <select id="target" name="target">
+            <option selected disabled>Select An Option</option>
+            <option value="child">My Child</option>
+            <option value="myself">Myself</option>
+          </select>
+        </div>
+
+        <div class="hidden me-attr">
+          <label for="yname">Your Full Name</label>
+          <input type="text" id="yname" name="name" placeholder="Name" />
+        </div>
+
+        <div class="hidden child-attr">
+          <label for="cname">Child's Full Name</label>
+          <input type="text" id="cname" name="name" placeholder="Name" />
+        </div>
+
+        <div class="hidden me-attr">
+          <label for="yage">Your age (This Year)</label>
+          <input type="text" id="age" placeholder="Age" name="Age" />
+        </div>
+
+        <div class="hidden child-attr">
+          <label for="cage">Child's Age (This Year)</label>
+          <input type="text" id="cage" placeholder="Age" name="Age" />
+        </div>
+
+        <div class="hidden general-attr">
+          <label for="yname">Contact Number</label>
+          <input type="text" id="ctcNo" placeholder="+65" name="contactNo" />
+        </div>
+
+        <div class="hidden general-attr">
+          <label for="location">Location for Trial</label>
+          <select id="location" name="location">
+            <option selected disabled>Select An Option</option>
+            <option value="arc">Alexandra Retail Centre</option>
+            <option value="stpy">SAFRA Toa Payoh</option>
+            <option value="rv">Rivervale</option>
+          </select>
+        </div>
+
+        <div class="hidden arc-attr">
+          <label for="schedule">Choose a Schedule</label>
+          <select id="arc-schedule" name="schedule">
+            <option selected disabled>Select An Option</option>
+            <option id="arc1">arc Monday</option>
+            <option id="arc2">arc Tuesday</option>
+            <option id="arc3">arc Wednesday</option>
+          </select>
+        </div>
+
+        <div class="hidden stpy-attr">
+          <label for="schedule">Choose a Schedule</label>
+          <select id="stpy-schedule" name="schedule">
+            <option selected disabled>Select An Option</option>
+            <option id="stpy1">stpy Monday</option>
+            <option id="stpy2">stpy Tuesday</option>
+            <option id="stpy3">stpy Wednesday</option>
+          </select>
+        </div>
+
+        <div class="hidden rv-attr">
+          <label for="schedule">Choose a Schedule</label>
+          <select id="rv-schedule" name="schedule">
+            <option selected disabled>Select An Option</option>
+            <option id="rv1">rv Monday</option>
+            <option id="rv2">rv Tuesday</option>
+            <option id="rv3">rv Wednesday</option>
+          </select>
+        </div>
+
+        <button type="submit" class="hidden submitBtn btn">Submit</button>
+      </form>
+    </section>
+
+    <!--Footer-->
+    <div id="footer"></div>
+    <script src="js/trial.js"></script>
+    <script src="js/general.js"></script>
+  </body>
+</html>
