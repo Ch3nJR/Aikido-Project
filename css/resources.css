@@ -82,6 +82,10 @@
   justify-content: flex-start;
 }
 
+.attribute a {
+  color: #666362;
+}
+
 /*Media Queries*/
 @media only screen and (min-width: 560px) {
   .item-text {
