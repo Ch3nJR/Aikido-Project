@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aikiForest</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!--Scroll to top btn-->
+    <!-- <div class="scrollToTop-btn flex-center">
+      <i class="bi bi-arrow-up"></i>
+    </div> -->
+
+    <section class="sec-02">
+      <div class="container">
+        <h3 class="section-title">Add Product Here</h3>
+        <div class="listingcontent">
+          <label><b>Product Name :</b></label>
+
+          <input id="nameinp" type="text" placeholder="Product Name" />
+
+          <label id="pdlab"><b>Product Description :</b></label>
+          <textarea id="desarea"></textarea><br /><br />
+          <div id="imagesDiv"></div>
+        </div>
+
+        <div id="controldiv">
+          <label id="uploadstat" hidden>Uploading Image</label>
+          <button id="loadlab" class="bn59">Clear Images</button>
+          <button id="selimgsbtn" class="bn59">Select Images</button>
+          <button id="addprodbtn" class="bn59">Add Product</button>
+        </div>
+      </div>
+    </section>
+
+    <script type="module">
+      /*Variables & References*/
+      var Files = [];
+      var FileReaders = [];
+      var ImageLinksArray = [];
+
+      const imgdiv = document.getElementById("imagesDiv");
+      const selBtn = document.getElementById("selimgsbtn");
+      const addBtn = document.getElementById("addprodbtn");
+      const proglab = document.getElementById("loadlab");
+      const uploadstat = document.getElementById("uploadstat");
+
+      const name = document.getElementById("nameinp");
+      const description = document.getElementById("desarea");
+
+      function OpenFileDialog() {
+        let inp = document.createElement("input");
+        inp.type = "file";
+        inp.multiple = "multiple";
+
+        inp.onchange = (e) => {
+          AssignImgsToFilesArray(e.target.files);
+          CreateImgTags();
+        };
+
+        inp.click();
+      }
+
+      function AssignImgsToFilesArray(thefiles) {
+        let num = Files.length + thefiles.length;
+        let looplim = num <= 1 ? thefiles.length : 1 - Files.length;
+
+        for (let i = 0; i < looplim; i++) {
+          Files.push(thefiles[i]);
+        }
+
+        if (num > 1) alert("Only 1 image is allowed!");
+      }
+
+      function CreateImgTags() {
+        imgdiv.innerHTML = "";
+        imgdiv.classList.add("imagesDivStyle");
+
+        for (let i = 0; i < Files.length; i++) {
+          FileReaders[i] = new FileReader();
+
+          FileReaders[i].onload = function () {
+            var img = document.createElement("img");
+            img.id = "imgNo" + i;
+            img.classList.add("imgs");
+            img.src = FileReaders[i].result;
+            imgdiv.append(img);
+          };
+          FileReaders[i].readAsDataURL(Files[i]);
+        }
+        let upstat = document.getElementById("uploadstat");
+        upstat.innerHTML = "";
+        upstat.style =
+          "cursor:pointer;display:block;color:#111222; font-size:18px";
+        imgdiv.append(upstat);
+      }
+
+      function ClearImages() {
+        Files = [];
+        ImageLinksArray = [];
+        imgdiv.innerHTML = "";
+        imgdiv.classList.remove("imagesDivStyle");
+      }
+
+      function getShortTitle() {
+        let namey = name.value.substring(0, 50);
+        return namey.replace(/[^a-zA-Z0-9]/g, "");
+      }
+
+      function GetImgUploadProgress() {
+        return (
+          "Images Uploaded " + ImageLinksArray.length + " of " + Files.length
+        );
+      }
+
+      function IsAllImagesUploaded() {
+        return ImageLinksArray.length == Files.length;
+      }
+
+      function RestoreBack() {
+        selBtn.disabled = false;
+        addBtn.disabled = false;
+        proglab.disabled = false;
+      }
+
+      //-----------------------------------EVENTS--------------------------------//
+      selBtn.addEventListener("click", OpenFileDialog);
+      addBtn.addEventListener("click", UploadAllImages);
+      proglab.addEventListener("click", ClearImages);
+
+      //-----------------------------------UPLOAD TO FIREBASE--------------------------------//
+
+      function UploadAllImages() {
+        selBtn.disabled = true;
+        addBtn.disabled = true;
+
+        ImageLinksArray = [];
+
+        for (let i = 0; i < Files.length; i++) {
+          UploadAnImage(Files[i], i);
+        }
+      }
+
+      function UploadAnImage(imgToUpload, imgNo) {
+        const metadata = {
+          contentType: imgToUpload.type,
+        };
+
+        const storage = getStorage();
+
+        const ImageAddress =
+          "TheImages/" + getShortTitle() + "/img#" + (imgNo + 1);
+
+        const storageRef = sRef(storage, ImageAddress);
+
+        const UploadTask = uploadBytesResumable(
+          storageRef,
+          imgToUpload,
+          metadata
+        );
+
+        UploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            uploadstat.innerHTML = GetImgUploadProgress();
+          },
+
+          (error) => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Image failed to upload. Please try again.",
+            });
+          },
+
+          () => {
+            getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+              ImageLinksArray.push(downloadURL);
+              if (IsAllImagesUploaded()) {
+                uploadstat.innerHTML = "All images successfully uploaded.";
+                UploadAProduct();
+              }
+            });
+          }
+        );
+      }
+
+      //-----------------------------------IMPORTS + CONFIGURATIONS --------------------------------//
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
+      //IMPORT FIREBASE STORAGE
+      import {
+        getStorage,
+        ref as sRef,
+        uploadBytesResumable,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-storage.js";
+
+      //FIREBASE REALTIME DATABASE
+      import {
+        getDatabase,
+        ref,
+        set,
+        child,
+        get,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAnoH63yEOfzs1jKZCqmYyl3Ftb6tgvt0g",
+        authDomain: "aikidowebsite-d9ae2.firebaseapp.com",
+        databaseURL:
+          "https://aikidowebsite-d9ae2-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "aikidowebsite-d9ae2",
+        storageBucket: "aikidowebsite-d9ae2.appspot.com",
+        messagingSenderId: "586387827383",
+        appId: "1:586387827383:web:afba4c1fd486bdeb193b32",
+        measurementId: "G-HG29YJZH51",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      const realdb = getDatabase();
+
+      //----------------------UPLOAD A PRODUCT---------------------
+
+      function UploadAProduct() {
+        set(ref(realdb, "TheProductRealdb/" + getShortTitle()), {
+          ProductTitle: name.value,
+          Description: description.value,
+          LinksOfImagesArray: ImageLinksArray,
+        });
+
+        Swal.fire({
+          icon: "success",
+          text: "Upload Successful!",
+        });
+        RestoreBack();
+      }
+    </script>
+
+    <!-- <script src="js/general.js"></script> -->
+  </body>
+</html>

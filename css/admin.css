@@ -1,0 +1,95 @@
+.sec-02 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 100px;
+  color: #111222;
+}
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.section-title {
+  font-size: 3em;
+  margin-bottom: 80px;
+}
+
+/*Adding listing css*/
+.listingcontainer {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+  align-content: center;
+}
+.listingcontent {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+#descarea {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  height: 200px;
+  border-radius: 5px;
+}
+input {
+  height: 30px;
+}
+.bn59 {
+  background-color: #141414;
+  border: 1px solid rgba(54, 54, 54, 0.6);
+  font-weight: 600;
+  position: relative;
+  outline: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 45px;
+  width: 130px;
+  opacity: 1;
+  color: #fff;
+}
+.imagesDivStyle {
+  position: relative;
+}
+
+.imgs {
+  height: 200px;
+  width: 350px;
+  border: 5px solid;
+  border-color: white;
+  border-radius: 25px;
+}
+
+#pdlab {
+  vertical-align: top;
+  margin-top: 65px;
+}
+
+#addprodbtn,
+#selimgsbtn,
+#loadlab {
+  float: right;
+  margin-left: 10px;
+}
+
+#controldiv {
+  display: flex;
+  width: 740px;
+  justify-content: center;
+}
+
+#uploadstat {
+  width: 100vw;
+}
