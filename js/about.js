@@ -1,5 +1,6 @@
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
+  loop: true,
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
