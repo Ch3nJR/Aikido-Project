@@ -44,6 +44,9 @@
       </div>
     </section>
 
+    <!--=======product display=======-->
+    <div id="productsDiv" class="container"></div>
+
     <script type="module">
       /*Variables & References*/
       var Files = [];
@@ -249,6 +252,99 @@
           text: "Upload Successful!",
         });
         RestoreBack();
+      }
+
+      var OuterDiv = document.getElementById("productsDiv");
+      var ArrayOfProducts = [];
+      window.addEventListener("load", GetAllProducts);
+
+      function GetAllProducts() {
+        const dbref = ref(realdb);
+
+        get(child(dbref, "TheProductRealdb")).then((snapshot) => {
+          snapshot.forEach((prod) => {
+            ArrayOfProducts.push(prod.val());
+          });
+          AddAllProducts();
+        });
+      }
+
+      function AddAllProducts() {
+        let i = 0;
+        ArrayOfProducts.forEach((prod) => {
+          if (prod.LinksOfImagesArray) {
+            AddAProduct(prod, i++);
+          }
+        });
+      }
+
+      function AddAProduct(product, index) {
+        let html =
+          `
+          <img src="` +
+          product.LinksOfImagesArray[0] +
+          `" class="thumb mt-2" id="thumb` +
+          index +
+          `">
+          <p class="title flex-center" id="title` +
+          index +
+          `">` +
+          product.ProductTitle +
+          `</p>
+          ` +
+          `
+          <h5 class="description">` +
+          product.Description +
+          `</h5>
+          <button class="bn59" id="${
+            "delbtn" + product.ProductTitle + Date.now()
+          }" style="background-color: red">Delete</button>
+          `;
+
+        let newProd = document.createElement("div");
+        newProd.classList.add("productcard");
+        newProd.id = product.ProductTitle.toUpperCase();
+        newProd.innerHTML = html;
+        OuterDiv.append(newProd);
+
+        const delbtn = document.getElementById(
+          "delbtn" + product.ProductTitle + Date.now()
+        );
+        delbtn.addEventListener("click", DelAProduct);
+        delbtn.pdtTitle = product.ProductTitle;
+      }
+
+      function ProductDescription(array) {
+        document.getElementById("description").innerHTML = product.Description;
+        return ul.outerHTML;
+      }
+
+      let findBox = document.getElementById("find");
+      findBox.addEventListener("keyup", function (evt) {
+        let filter = this.value.toUpperCase();
+        let l = document.getElementsByClassName("productcard");
+        for (var i = 0; i < l.length; i++) {
+          let a = l[i];
+          let value = a.id;
+          if (value.toUpperCase().indexOf(filter) > -1) {
+            l[i].style.display = "";
+          } else {
+            l[i].style.display = "none";
+          }
+        }
+      });
+
+      function DelAProduct(evt) {
+        let pdtTitle = evt.currentTarget.pdtTitle;
+        set(
+          ref(
+            realdb,
+            "TheProductRealdb/" + pdtTitle.replace(/[^a-zA-Z0-9]/g, "") + "/"
+          ),
+          {}
+        ).then(() => {
+          location.reload();
+        });
       }
     </script>
 

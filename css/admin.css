@@ -93,3 +93,89 @@ input {
 #uploadstat {
   width: 100vw;
 }
+
+/*Display*/
+#productsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.productcard {
+  border: 1px lightgray solid;
+  height: 510px;
+  width: 290px;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 25px;
+}
+
+.productcard:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.description {
+  padding: 0rem 2rem;
+}
+
+.thumb {
+  width: 250px;
+  height: 160px;
+  cursor: pointer;
+}
+
+#detbtns {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 15px;
+}
+#detbtns:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+#detbtns:hover {
+  background-color: rgb(1, 1, 87);
+  color: wheat;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: darkblue;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+  text-align: center;
+}
