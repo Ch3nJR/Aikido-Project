@@ -156,8 +156,7 @@
 /*Media Queries*/
 @media only screen and (min-width: 768px) {
   .about-starting {
-    height: 80vh;
-    font-size: 2.3rem;
+    font-size: 2rem;
     line-height: 4rem;
   }
 
