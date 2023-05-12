@@ -38,7 +38,7 @@ nav i {
 /*Features section*/
 .feature-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   max-width: 100%;
   gap: 2rem;
   margin: 0 auto;
@@ -75,8 +75,12 @@ nav i {
 .benefit-text {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 500px;
   gap: 1.2rem;
+}
+
+.benefit-text p {
+  line-height: 2rem;
 }
 
 .benefit-img {
@@ -190,14 +194,20 @@ nav i {
 }
 
 @media only screen and (min-width: 768px) {
-  /* .landing-container, */
-  .feature-container,
   .benefit {
     flex-direction: row;
   }
 
+  .feature-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
   .benefit {
-    gap: 6rem;
+    gap: 3rem;
+  }
+
+  .benefit-text {
+    max-width: 400px;
   }
 
   .landing-container {
@@ -217,8 +227,18 @@ nav i {
   }
 
   .benefit-img img {
-    max-width: 550px;
-    max-height: 550px;
+    max-width: 350px;
+    max-height: 350px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 840px) {
+  .benefit {
+    gap: 2rem;
+  }
+
+  .benefit-text {
+    max-width: 350px;
   }
 }
 
@@ -248,10 +268,41 @@ nav i {
   .left-landing-box {
     padding-right: 5rem;
   }
+
+  .benefit-text {
+    max-width: 500px;
+  }
 }
 
 @media only screen and (min-width: 1407px) {
   .feature-container {
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  }
+
+  .testimonial-container {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .left-landing-box {
+    padding-left: 0rem;
+    padding-right: 10rem;
+  }
+
+  .benefit-text {
+    max-width: 650px;
+  }
+
+  .benefit-img img {
+    max-width: 550px;
+    max-height: 550px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .left-landing-box {
+    padding-left: 0rem;
+    padding-right: 20rem;
   }
 }
