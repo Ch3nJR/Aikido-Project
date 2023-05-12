@@ -23,6 +23,7 @@
 
 #vision-value {
   max-width: 950px;
+  line-height: 2rem;
 }
 
 .values-container {
@@ -167,5 +168,20 @@
   .values-group {
     flex-direction: row;
     gap: 5.5rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .values-group {
+    gap: 18rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .about-starting {
+    max-width: 1150px;
+  }
+  #vision-value {
+    max-width: 1150px;
   }
 }
