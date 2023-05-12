@@ -106,11 +106,13 @@ button {
 @media only screen and (min-width: 768px) {
   .button-container {
     flex-direction: row;
+    gap: unset;
+    justify-content: space-evenly;
   }
 
   .gr-item {
     flex-direction: row;
-    gap: 10rem;
+    gap: 8rem;
     width: 600px;
   }
 
@@ -126,12 +128,12 @@ button {
 @media only screen and (min-width: 1024px) {
   .item-container {
     flex-direction: row;
-    gap: 5rem;
+    gap: 8rem;
   }
 
   .item-img {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 400px;
+    max-height: 400px;
   }
 
   .gr-item-text {
@@ -143,6 +145,6 @@ button {
   }
 
   .item-text p {
-    width: 500px;
+    width: 600px;
   }
 }
