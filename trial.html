@@ -40,40 +40,48 @@
     <section class="section form-section">
       <form action="https://formspree.io/f/xjvdjwqj" method="POST">
         <div id="personTrial">
-          <label for="target">Who is this trial for?</label>
-          <select id="target" name="target">
+          <label for="target">Choose A Trial Class (Based on Age)</label>
+          <select id="target" name="target" onchange="showMainInp(event)">
             <option selected disabled>Select An Option</option>
-            <option value="child">My Child</option>
-            <option value="myself">Myself</option>
+            <option value="tots">Tots (4-6)</option>
+            <option value="cj">Cadet Junior (7-10)</option>
+            <option value="cs">Cadet Senior (11-15)</option>
+            <option value="adult">Adult (Above 16)</option>
           </select>
         </div>
 
-        <div class="hidden me-attr">
-          <label for="yname">Your Full Name</label>
-          <input type="text" id="yname" name="name" placeholder="Name" />
+        <!-- Details -->
+        <div class="details hidden">
+          <div class="default-attr hidden">
+            <div>
+              <label for="yname">Your Full Name</label>
+              <input type="text" id="yname" name="name" placeholder="Name" />
+            </div>
+            <div>
+              <label for="yage">Your age (This Year)</label>
+              <input type="text" id="age" placeholder="Age" name="Age" />
+            </div>
+          </div>
+
+          <div class="child-attr hidden">
+            <div class="">
+              <label for="cname">Child's Full Name</label>
+              <input type="text" id="cname" name="name" placeholder="Name" />
+            </div>
+
+            <div class="">
+              <label for="cage">Child's Age (This Year)</label>
+              <input type="text" id="cage" placeholder="Age" name="Age" />
+            </div>
+          </div>
+
+          <div>
+            <label for="yname">Contact Number</label>
+            <input type="text" id="ctcNo" placeholder="+65" name="contactNo" />
+          </div>
         </div>
 
-        <div class="hidden child-attr">
-          <label for="cname">Child's Full Name</label>
-          <input type="text" id="cname" name="name" placeholder="Name" />
-        </div>
-
-        <div class="hidden me-attr">
-          <label for="yage">Your age (This Year)</label>
-          <input type="text" id="age" placeholder="Age" name="Age" />
-        </div>
-
-        <div class="hidden child-attr">
-          <label for="cage">Child's Age (This Year)</label>
-          <input type="text" id="cage" placeholder="Age" name="Age" />
-        </div>
-
-        <div class="hidden general-attr">
-          <label for="yname">Contact Number</label>
-          <input type="text" id="ctcNo" placeholder="+65" name="contactNo" />
-        </div>
-
-        <div class="hidden general-attr">
+        <div class="hidden general-attr" onchange="handleLoct(event)">
           <label for="location">Location for Trial</label>
           <select id="location" name="location">
             <option selected disabled>Select An Option</option>
@@ -83,33 +91,162 @@
           </select>
         </div>
 
+        <!-- Alexandra Timing Select -->
         <div class="hidden arc-attr">
           <label for="schedule">Choose a Schedule</label>
-          <select id="arc-schedule" name="schedule">
-            <option selected disabled>Select An Option</option>
-            <option id="arc1">arc Monday</option>
-            <option id="arc2">arc Tuesday</option>
-            <option id="arc3">arc Wednesday</option>
+          <select id="arc-schedule" name="schedule" onchange="showSubmit()">
+            <option selected disabled class="default">Select An Option</option>
+            <!--Tots-->
+            <option class="hidden tots">Wednesday 5pm</option>
+            <option class="hidden tots">Thursday 4pm</option>
+            <option class="hidden tots">Saturday 9am</option>
+            <option class="hidden tots">Saturday 3pm</option>
+
+            <!--Cadet Junior-->
+            <option class="hidden cj">Monday 5pm</option>
+            <option class="hidden cj">Tuesday 5pm</option>
+            <option class="hidden cj">Wednesday 4pm</option>
+            <option class="hidden cj">Wednesday 5pm</option>
+            <option class="hidden cj">Thursday 4pm</option>
+            <option class="hidden cj">Thursday 5pm</option>
+            <option class="hidden cj">Friday 4pm</option>
+            <option class="hidden cj">Friday 5pm</option>
+            <option class="hidden cj">Saturday 9am</option>
+            <option class="hidden cj">Saturday 10am</option>
+            <option class="hidden cj">Saturday 11am</option>
+            <option class="hidden cj">Saturday 4pm</option>
+            <option class="hidden cj">Sunday 9am</option>
+            <option class="hidden cj">Sunday 10am</option>
+            <option class="hidden cj">Sunday 2pm</option>
+            <option class="hidden cj">Sunday 4pm</option>
+
+            <!--Cadet Senior-->
+            <option class="hidden cs">Monday 5pm</option>
+            <option class="hidden cs">Tuesday 5pm</option>
+            <option class="hidden cs">Wednesday 4pm</option>
+            <option class="hidden cs">Thursday 5pm</option>
+            <option class="hidden cs">Friday 4pm</option>
+            <option class="hidden cs">Friday 5pm</option>
+            <option class="hidden cs">Saturday 10am</option>
+            <option class="hidden cs">Saturday 11am</option>
+            <option class="hidden cs">Saturday 12pm</option>
+            <option class="hidden cs">Saturday 1pm</option>
+            <option class="hidden cs">Saturday 2pm</option>
+            <option class="hidden cs">Saturday 5pm</option>
+            <option class="hidden cs">Saturday 6pm</option>
+            <option class="hidden cs">Sunday 11am</option>
+            <option class="hidden cs">Sunday 2pm</option>
+            <option class="hidden cs">Sunday 3pm</option>
+            <option class="hidden cs">Sunday 4pm</option>
+
+            <!--Adults-->
+            <option class="hidden ad">Thursday 1215pm</option>
+            <option class="hidden ad">Saturday 5pm</option>
+            <option class="hidden ad">Saturday 6pm</option>
           </select>
         </div>
 
+        <!-- SAFRA timing select -->
         <div class="hidden stpy-attr">
           <label for="schedule">Choose a Schedule</label>
-          <select id="stpy-schedule" name="schedule">
-            <option selected disabled>Select An Option</option>
-            <option id="stpy1">stpy Monday</option>
-            <option id="stpy2">stpy Tuesday</option>
-            <option id="stpy3">stpy Wednesday</option>
+          <select id="stpy-schedule" name="schedule" onchange="showSubmit()">
+            <option selected disabled class="default">Select An Option</option>
+            <!--Tots-->
+            <option class="tots">Monday 5pm</option>
+            <option class="tots">Monday 6pm</option>
+            <option class="tots">Saturday 9am</option>
+            <option class="tots">Saturday 2pm</option>
+            <option class="tots">Sunday 9am</option>
+
+            <!--Cadet Junior-->
+            <option class="cj">Monday 5pm</option>
+            <option class="cj">Monday 6pm</option>
+            <option class="cj">Tuesday 3pm</option>
+            <option class="cj">Wednesday 3pm</option>
+            <option class="cj">Thursday 4pm</option>
+            <option class="cj">Friday 5pm</option>
+            <option class="cj">Friday 6pm</option>
+            <option class="cj">Saturday 9am</option>
+            <option class="cj">Saturday 11am</option>
+            <option class="cj">Saturday 1pm</option>
+            <option class="cj">Saturday 2pm</option>
+            <option class="cj">Saturday 5pm</option>
+            <option class="cj">Sunday 9am</option>
+            <option class="cj">Sunday 10am</option>
+            <option class="cj">Sunday 12pm</option>
+            <option class="cj">Sunday 1pm</option>
+            <option class="cj">Sunday 2pm</option>
+            <option class="cj">Sunday 3pm</option>
+
+            <!--Cadet Senior-->
+            <option class="cs">Tuesday 3pm</option>
+            <option class="cs">Wednesday 3pm</option>
+            <option class="cs">Thursday 3pm</option>
+            <option class="cs">Friday 5pm</option>
+            <option class="cs">Friday 6pm</option>
+            <option class="cs">Saturday 10am</option>
+            <option class="cs">Saturday 11am</option>
+            <option class="cs">Saturday 1pm</option>
+            <option class="cs">Saturday 3pm</option>
+            <option class="cs">Saturday 6pm</option>
+            <option class="cs">Sunday 10am</option>
+            <option class="cs">Sunday 11am</option>
+            <option class="cs">Sunday 12pm</option>
+            <option class="cs">Sunday 2pm</option>
+            <option class="cs">Sunday 4pm</option>
+
+            <!--Adult-->
+            <option class="ad">Saturday 8pm</option>
           </select>
         </div>
 
+        <!-- Rivervale timing select -->
         <div class="hidden rv-attr">
           <label for="schedule">Choose a Schedule</label>
-          <select id="rv-schedule" name="schedule">
-            <option selected disabled>Select An Option</option>
-            <option id="rv1">rv Monday</option>
-            <option id="rv2">rv Tuesday</option>
-            <option id="rv3">rv Wednesday</option>
+          <select id="rv-schedule" name="schedule" onchange="showSubmit()">
+            <option selected disabled class="default">Select An Option</option>
+            <!--Tots-->
+            <option class="tots">Saturday 1pm</option>
+            <option class="tots">Saturday 4pm</option>
+            <option class="tots">Sunday 1pm</option>
+
+            <!--Cadet Junior-->
+            <option class="cj">Monday 5pm</option>
+            <option class="cj">Monday 6pm</option>
+            <option class="cj">Monday 7pm</option>
+            <option class="cj">Tuesday 7pm</option>
+            <option class="cj">Tuesday 8pm</option>
+            <option class="cj">Wednesday 5pm</option>
+            <option class="cj">Thursday 4pm</option>
+            <option class="cj">Thursday 7pm</option>
+            <option class="cj">Friday 5pm</option>
+            <option class="cj">Saturday 10am</option>
+            <option class="cj">Saturday 11am</option>
+            <option class="cj">Saturday 12pm</option>
+            <option class="cj">Saturday 1pm</option>
+            <option class="cj">Saturday 2pm</option>
+            <option class="cj">Saturday 3pm</option>
+            <option class="cj">Saturday 4pm</option>
+            <option class="cj">Sunday 12pm</option>
+            <option class="cj">Sunday 1pm</option>
+            <option class="cj">Sunday 2pm</option>
+            <option class="cj">Sunday 3pm</option>
+
+            <!--Cadet Senior-->
+            <option class="cs">Monday 6pm</option>
+            <option class="cs">Tuesday 7pm</option>
+            <option class="cs">Tuesday 8pm</option>
+            <option class="cs">Wednesday 5pm</option>
+            <option class="cs">Thursday 4pm</option>
+            <option class="cs">Thursday 7pm</option>
+            <option class="cs">Saturday 11am</option>
+            <option class="cs">Saturday 12pm</option>
+            <option class="cs">Saturday 4pm</option>
+            <option class="cs">Sunday 2pm</option>
+            <option class="cs">Sunday 3pm</option>
+
+            <!--Adults-->
+            <option class="ad">Friday 730pm</option>
           </select>
         </div>
 
