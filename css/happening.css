@@ -1,0 +1,132 @@
+.heading-section {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/*timline section*/
+.timeline {
+  min-height: 100vh;
+  padding: 0rem 0.938rem 2.25rem 0.938rem;
+}
+
+.items {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.items::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #666362;
+  left: calc(50% - 1px);
+}
+
+.item {
+  margin-bottom: 2.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.item:nth-child(odd) {
+  padding-right: calc(50% + 30px);
+  text-align: right;
+}
+
+.item:nth-child(even) {
+  padding-left: calc(50% + 30px);
+}
+
+.circle {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-color: #666362;
+  left: calc(50% - 8px);
+  border-radius: 50%;
+  top: 10px;
+}
+
+.date {
+  font-size: 1.125rem;
+  color: #666362;
+  margin: 0.375rem 0rem 0.938rem;
+}
+
+.item-content {
+  background-color: #666362;
+  padding: 1.875rem;
+  border-radius: 5px;
+}
+
+.item-content h3 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin: 0rem 0rem 0.625rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.item-content p {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.375rem;
+}
+
+/*Dates section*/
+.date-section {
+  padding-bottom: 0rem;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.list-group h2 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.list {
+  line-height: 2rem;
+  text-align: center;
+}
+
+/* responsive */
+@media only screen and (max-width: 767px) {
+  .items::before {
+    left: 7px;
+  }
+  .item:nth-child(odd) {
+    padding-right: 0;
+    text-align: left;
+  }
+  .item:nth-child(odd),
+  .item:nth-child(even) {
+    padding-left: 37px;
+  }
+  .circle {
+    left: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .list-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+  }
+}
