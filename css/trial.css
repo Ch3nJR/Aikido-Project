@@ -2,6 +2,10 @@
   display: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /*Contact Section*/
 .top-section-ctc {
   padding-top: 6rem;
