@@ -2,6 +2,9 @@ let age;
 let savedLocation;
 
 function showMainInp(event) {
+  console.log("showMainInp function entered");
+  $(".text-append-niggeR").append("<p>showMainInp function entered</p>");
+
   $(".details").removeClass("hidden");
   var selectedVal = event.target.options[event.target.selectedIndex].value;
   age = selectedVal;
@@ -27,16 +30,30 @@ function showMainInp(event) {
   if (savedLocation) {
     adjustSchedule(savedLocation);
   }
+
+  console.log("showMainInp function ended");
+  $(".text-append-niggeR").append("<p>showMainInp function ended</p>");
 }
 
 // different location different schedule timing
 function handleLoct(event) {
+  console.log("handleLoct function entered");
+  $(".text-append-niggeR").append("<p>handleLoct function entered</p>");
+
   savedLocation = event.target.options[event.target.selectedIndex].value;
 
   adjustSchedule(savedLocation);
+
+  console.log("handleLoct function ended");
+  $(".text-append-niggeR").append("<p>handleLoct function ended</p>");
 }
 
 function adjustSchedule(location) {
+  console.log("show adjustSchedule function entered");
+  $(".text-append-niggeR").append(
+    "<p>show adjustSchedule function entered</p>"
+  );
+
   // Reset schedule
   $(".arc-attr")
     .addClass("hidden")
@@ -71,9 +88,17 @@ function adjustSchedule(location) {
   $(
     "." + location + " select option" + "." + (age == "adult" ? "ad" : age)
   ).removeClass("hidden");
+
+  console.log("show adjustSchedule function ended");
+  $(".text-append-niggeR").append("<p>show adjustSchedule function ended</p>");
 }
 
 // Show submit button
 function showSubmit() {
+  console.log("show submit button entered");
+  $(".text-append-niggeR").append("<p>show submit button function ended</p>");
+
   $(".submitBtn").removeClass("hidden");
+  console.log("show submit button ended");
+  $(".text-append-niggeR").append("<p>show submit button function ended</p>");
 }
