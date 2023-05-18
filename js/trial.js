@@ -1,6 +1,27 @@
 let age;
 let savedLocation;
 
+let data = {
+  arc: {
+    tots: ["arc tots"],
+    cj: ["arc cj"],
+    cs: ["arc cs"],
+    ad: ["arc ad"],
+  },
+  stpy: {
+    tots: ["stpy tots"],
+    cj: ["stpy cj"],
+    cs: ["stpy cs"],
+    ad: ["stpy ad"],
+  },
+  rv: {
+    tots: ["rv tots"],
+    cj: ["rv cj"],
+    cs: ["rv cs"],
+    ad: ["rv ad"],
+  },
+};
+
 function showMainInp(event) {
   console.log("showMainInp function entered");
   $(".text-append-niggeR").append("<p>showMainInp function entered</p>");
@@ -54,46 +75,28 @@ function adjustSchedule(location) {
     "<p>show adjustSchedule function entered</p>"
   );
 
+  tempLocation = location + "-attr";
+
   // Reset schedule
-  $(".arc-attr")
+  $(".schedule-select").addClass("hidden");
+  $("." + tempLocation)
     .addClass("hidden")
-    .find("select .default")
-    .prop("selected", true);
-
-  $(".stpy-attr")
-    .addClass("hidden")
-    .find("select .default")
-    .prop("selected", true);
-
-  $(".rv-attr")
-    .addClass("hidden")
-    .find("select .default")
-    .prop("selected", true);
-
-  location = location + "-attr";
+    .find("option")
+    .remove();
+  $("." + tempLocation + " select").append(
+    '<option selected disabled class="default">Select An Option</option>'
+  );
 
   // Show section
-  $("." + location).removeClass("hidden");
-
-  // Hide all options
-  $("." + location + " select option").addClass("hidden");
+  $("." + tempLocation).removeClass("hidden");
+  console.log(location);
+  console.log(age);
 
   // show based on age
-  console.log(
-    "." + location + " select option" + "." + (age == "adult" ? "ad" : age)
-  );
-
-  let tempAge;
-  if (age == "adult") {
-    tempAge = "ad";
-  } else {
-    tempAge = age;
-  }
-  $(".text-append-niggeR").append(
-    "<p>" + "." + location + " select option" + "." + tempAge + "</p>"
-  );
-
-  $("." + location + " select option" + "." + tempAge).removeClass("hidden");
+  data[location][age].forEach((option) => {
+    console.log(option);
+    $("." + tempLocation + " select").append("<option>" + option + "</option>");
+  });
 
   console.log("show adjustSchedule function ended");
   $(".text-append-niggeR").append("<p>show adjustSchedule function ended</p>");
@@ -106,5 +109,5 @@ function showSubmit() {
 
   $(".submitBtn").removeClass("hidden");
   console.log("show submit button ended");
-  $(".text-append-niggeR").append("<p>show submit button function ended</p>");
+  $(".text-append-niggeR").append("<p>show submit button function ended</p>");
 }
