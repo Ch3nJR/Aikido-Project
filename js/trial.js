@@ -109,5 +109,5 @@ function showSubmit() {
 
   $(".submitBtn").removeClass("hidden");
   console.log("show submit button ended");
-  $(".text-append-niggeR").append("<p>show submit button function ended</p>");
+  $(".text-append-niggeR").append("<p>show submit button function ended</p>");
 }
