@@ -58,20 +58,17 @@ function adjustSchedule(location) {
   $(".arc-attr")
     .addClass("hidden")
     .find("select .default")
-    .prop("selected", true)
-    .addClass("hidden");
+    .prop("selected", true);
 
   $(".stpy-attr")
     .addClass("hidden")
     .find("select .default")
-    .prop("selected", true)
-    .addClass("hidden");
+    .prop("selected", true);
 
   $(".rv-attr")
     .addClass("hidden")
     .find("select .default")
-    .prop("selected", true)
-    .addClass("hidden");
+    .prop("selected", true);
 
   location = location + "-attr";
 
@@ -85,9 +82,18 @@ function adjustSchedule(location) {
   console.log(
     "." + location + " select option" + "." + (age == "adult" ? "ad" : age)
   );
-  $(
-    "." + location + " select option" + "." + (age == "adult" ? "ad" : age)
-  ).removeClass("hidden");
+
+  let tempAge;
+  if (age == "adult") {
+    tempAge = "ad";
+  } else {
+    tempAge = age;
+  }
+  $(".text-append-niggeR").append(
+    "<p>" + "." + location + " select option" + "." + tempAge + "</p>"
+  );
+
+  $("." + location + " select option" + "." + tempAge).removeClass("hidden");
 
   console.log("show adjustSchedule function ended");
   $(".text-append-niggeR").append("<p>show adjustSchedule function ended</p>");
@@ -100,5 +106,5 @@ function showSubmit() {
 
   $(".submitBtn").removeClass("hidden");
   console.log("show submit button ended");
-  $(".text-append-niggeR").append("<p>show submit button function ended</p>");
+  $(".text-append-niggeR").append("<p>show submit button function ended</p>");
 }
