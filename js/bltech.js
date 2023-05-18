@@ -7,17 +7,8 @@ ScrollReveal({
 });
 
 //target elements, and specify options to create reveal animations
-ScrollReveal().reveal(".gr-item-text", {
+ScrollReveal().reveal(".item-container", {
   delay: 500,
   origin: "left",
-});
-
-ScrollReveal().reveal(".attribute", {
-  delay: 500,
-  origin: "right",
-});
-
-ScrollReveal().reveal(".bl-heading", {
-  delay: 500,
-  origin: "top",
+  interval: 200,
 });
