@@ -26,12 +26,20 @@
       <div class="container">
         <h3 class="section-title">Add Product Here</h3>
         <div class="listingcontent">
-          <label><b>Product Name :</b></label>
+          <div class="box-container">
+            <label><b>Product Name:</b></label>
+            <input id="nameinp" type="text" placeholder="Name" />
+          </div>
 
-          <input id="nameinp" type="text" placeholder="Product Name" />
+          <div class="box-container">
+            <label><b>Product Price:</b></label>
+            <input id="priceinp" type="text" placeholder="Price" />
+          </div>
 
-          <label id="pdlab"><b>Product Description :</b></label>
-          <textarea id="desarea"></textarea><br /><br />
+          <div class="box-container">
+            <label id="pdlab"><b>Product Description :</b></label>
+            <textarea id="desarea"></textarea><br /><br />
+          </div>
           <div id="imagesDiv"></div>
         </div>
 
@@ -60,6 +68,7 @@
       const uploadstat = document.getElementById("uploadstat");
 
       const name = document.getElementById("nameinp");
+      const price = document.getElementById("priceinp");
       const description = document.getElementById("desarea");
 
       function OpenFileDialog() {
@@ -243,6 +252,7 @@
       function UploadAProduct() {
         set(ref(realdb, "TheProductRealdb/" + getShortTitle()), {
           ProductTitle: name.value,
+          Price: price.value,
           Description: description.value,
           LinksOfImagesArray: ImageLinksArray,
         });
@@ -296,6 +306,11 @@
           <h5 class="description">` +
           product.Description +
           `</h5>
+
+          <p> SGD ` +
+          product.Price +
+          `</p>
+          
           <button class="bn59" id="${
             "delbtn" + product.ProductTitle + Date.now()
           }" style="background-color: red">Delete</button>

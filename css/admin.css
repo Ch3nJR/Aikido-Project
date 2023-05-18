@@ -19,6 +19,11 @@
   margin-bottom: 80px;
 }
 
+.box-container {
+  display: flex;
+  flex-direction: column;
+}
+
 /*Adding listing css*/
 .listingcontainer {
   display: flex;
@@ -31,6 +36,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  gap: 2rem;
 }
 #descarea {
   display: flex;
@@ -74,7 +80,6 @@ input {
 
 #pdlab {
   vertical-align: top;
-  margin-top: 65px;
 }
 
 #addprodbtn,
