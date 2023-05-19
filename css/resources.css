@@ -16,7 +16,7 @@ button {
 }
 
 .btn {
-  width: 145px;
+  width: 110px;
   border: 1px solid black;
 }
 
@@ -71,6 +71,10 @@ button {
 }
 
 /*Grading Revision section*/
+.section-heading {
+  flex-direction: column;
+  gap: 1rem;
+}
 .gr-item-text {
   max-width: 200px;
 }

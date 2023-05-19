@@ -130,3 +130,11 @@
     gap: 5rem;
   }
 }
+
+@media only screen and (min-width: 1440px) {
+  .list-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8rem;
+  }
+}
