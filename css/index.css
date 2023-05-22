@@ -27,14 +27,6 @@ nav i {
   color: #fff;
 }
 
-/* .right-landing-box img {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  object-fit: cover;
-  overflow: hidden;
-} */
-
 /*Features section*/
 .feature-container {
   display: grid;
@@ -72,6 +64,10 @@ nav i {
   margin-bottom: 10rem;
 }
 
+#last-benefit {
+  margin-bottom: 3rem;
+}
+
 .benefit-text {
   display: flex;
   flex-direction: column;
@@ -101,7 +97,7 @@ nav i {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   max-width: 100%;
   gap: 2rem;
-  margin: 0 auto;
+  margin-bottom: 5rem;
 }
 
 .testimonial {
@@ -112,10 +108,93 @@ nav i {
   padding: 2rem;
 }
 
-/*FAQ section*/
-.faq-title {
+/*Promotion section*/
+.promo-header {
+  padding-bottom: 2rem;
+}
+.promo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  max-width: 100%;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.promo-card {
+  width: 250px;
+  height: 515px;
+  background: transparent;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.promo-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front {
+  display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+  background: url(../imgs/promo1.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 3.75rem 1.25rem 1.25rem 1.25rem;
+  filter: grayscale(1);
+}
+
+.front .btn {
+  width: 100px;
+  cursor: pointer;
+}
+
+.back {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  background: #666362;
+  color: #fff;
+  padding: 1.25rem 2.5rem;
+  transform: rotateY(180deg);
+}
+
+.back h2 {
+  font-size: 1.1rem;
+}
+
+.back p {
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+}
+
+.back .btn {
+  width: 100px;
+}
+
+.promo-card:hover {
+  border: 0px;
+}
+
+.promo-card:hover .promo-card-inner {
+  transform: rotateY(180deg);
+}
+
+/*FAQ section*/
+.faq-title h2 {
+  text-align: center;
 }
 
 .faq-title p {
@@ -180,6 +259,18 @@ nav i {
 }
 
 /*media queries*/
+@media only screen and (min-width: 375px) {
+  .promo-card {
+    width: 320px;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .promo-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
 /*Fix screen set when it hits 500px*/
 @media only screen and (min-width: 500px) and (max-width: 767px) {
   .feature-container,
@@ -280,6 +371,10 @@ nav i {
   }
 
   .testimonial-container {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+
+  .promo-container {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
 }
