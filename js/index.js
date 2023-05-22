@@ -37,7 +37,7 @@ ScrollReveal().reveal(".right-landing-box, .benefit-right", {
 //   origin: "bottom",
 // });
 
-ScrollReveal().reveal(".feature, .testimonial", {
+ScrollReveal().reveal(".feature, .testimonial, .promo-card", {
   delay: 500,
   origin: "bottom",
   interval: 200,
