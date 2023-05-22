@@ -123,7 +123,7 @@ section {
 
 /*Nav bar css*/
 nav {
-  position: absolute;
+  /* position: absolute; */
   z-index: 1040;
   width: 100%;
 }
@@ -243,7 +243,7 @@ nav i:hover,
 }
 
 /*Nav responsiveness*/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 501px) {
   #nav-modal {
     flex-direction: column;
     justify-content: center;
@@ -274,7 +274,7 @@ nav i:hover,
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 500px) {
   #nav-modal {
     flex-direction: column;
   }

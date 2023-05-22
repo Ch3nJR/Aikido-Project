@@ -1,6 +1,15 @@
+#top-section {
+  position: sticky;
+  /* padding-left: 0rem;
+  padding-right: 0rem; */
+}
+
 .heading-section {
-  flex-direction: column;
-  gap: 0.5rem;
+  position: sticky;
+  height: 50px;
+  z-index: 999;
+  background-color: #fff;
+  top: 0;
 }
 
 /*timline section*/

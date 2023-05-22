@@ -4,6 +4,10 @@ nav i {
   color: #fff;
 }
 
+nav {
+  position: absolute;
+}
+
 /*Top landing section*/
 .landing-container {
   background-image: url("../imgs/landingimage3.jpg");

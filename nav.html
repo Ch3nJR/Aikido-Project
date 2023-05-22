@@ -45,6 +45,7 @@
   $(".spanlist").on("click", function () {
     $("html").addClass("scroll-lock");
     $("body").addClass("scroll-lock");
+    $("nav").addClass("d-none");
     $("#nav-modal").fadeToggle("slow");
     ScrollReveal().reveal(".left-nav-links, .right-nav-links", {
       delay: 500,
@@ -65,6 +66,7 @@
     $("#nav-modal").fadeToggle("slow");
     $("html").removeClass("scroll-lock");
     $("body").removeClass("scroll-lock");
+    $("nav").removeClass("d-none");
     ScrollReveal().clean(".left-nav-links, .right-nav-links");
     console.log("closing");
   });
