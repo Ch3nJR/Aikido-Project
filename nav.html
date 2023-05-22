@@ -6,7 +6,7 @@
 
     <div class="nav-links">
       <a href="program.html" class="mobile-item">Programmes</a>
-      <a href="promotion.html" class="mobile-item">Promotions</a>
+      <a href="happening.html" class="mobile-item">Happenings</a>
       <i class="bi bi-list spanlist"></i>
     </div>
   </div>
@@ -18,15 +18,14 @@
       class="left-nav-links animate__animated animate__fadeInLeft animate__slow"
     >
       <a href="program.html">Programmes</a>
-      <a href="promotion.html">Promotions</a>
+      <a href="happening.html">Happenings</a>
     </div>
   </div>
 
   <div class="right-nav">
     <div
-      class="right-nav-links animate__animated animate__fadeInLeft animate__slow"
+      class="right-nav-links animate__animated animate__fadeInLeft animate__slower"
     >
-      <a href="happening.html">Happenings</a>
       <a href="resourcesMP.html">Resources</a>
       <a href="product.html">Products</a>
       <a href="location.html">Location</a>
@@ -42,13 +41,6 @@
 </div>
 
 <script>
-  //To create reveal animations
-  ScrollReveal({
-    reset: true,
-    duration: 2500,
-    delay: 400,
-  });
-
   $("#nav-modal").fadeToggle(0);
   $(".spanlist").on("click", function () {
     $("html").addClass("scroll-lock");
