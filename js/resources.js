@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   //Getting section to show from params
   const queryString = window.location.search;
-  console.log(queryString);
   //Store params for access
   const urlParams = new URLSearchParams(queryString);
   //Get section param to show
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("grBtn").click();
   }
   //Default section
-  else {
+  else if (section == "eb") {
     document.getElementById("ebBtn").click();
   }
 });

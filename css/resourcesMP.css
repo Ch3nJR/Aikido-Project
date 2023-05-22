@@ -1,7 +1,3 @@
-.top-section-rmp {
-  padding-top: 6rem;
-}
-
 .resources-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
