@@ -39,6 +39,7 @@ select {
 
   .top-section-ctc {
     padding-left: 6rem;
+    padding-bottom: 0rem;
   }
 }
 
@@ -49,6 +50,7 @@ select {
 
   .top-section-ctc {
     padding-left: 8rem;
+    padding-bottom: 0rem;
   }
 }
 
@@ -59,5 +61,6 @@ select {
 
   .top-section-ctc {
     padding-left: 16rem;
+    padding-bottom: 0rem;
   }
 }
