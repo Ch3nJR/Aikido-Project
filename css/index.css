@@ -158,6 +158,12 @@ nav {
   -moz-transform-style: preserve-3d; */
 }
 
+.promo-card:hover .promo-card-inner {
+  transform: rotateY(180deg);
+  /* -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg); */
+}
+
 .front,
 .back {
   position: absolute;
@@ -169,23 +175,21 @@ nav {
 }
 
 .front {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center; */
+  align-items: center;
   background: url(../imgs/promo1.jpg);
   background-size: cover;
   background-position: center;
-  /* padding: 3.75rem 1.25rem 1.25rem 1.25rem;
-  filter: grayscale(1); */
-  background-color: #bbb;
-  color: black;
+  padding: 3.75rem 1.25rem 1.25rem 1.25rem;
+  /* filter: grayscale(1); */
 }
 
-/* .front .btn {
+.front .btn {
   width: 100px;
   cursor: pointer;
-} */
+}
 
 .back {
   /* display: flex;
@@ -210,12 +214,6 @@ nav {
 
 .back .btn {
   width: 100px;
-}
-
-.promo-card:hover .promo-card-inner {
-  transform: rotateY(180deg);
-  /* -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg); */
 }
 
 /*FAQ section*/
