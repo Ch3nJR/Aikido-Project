@@ -172,19 +172,14 @@ nav {
   /* display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
+  align-items: center; */
   background: url(../imgs/promo1.jpg);
   background-size: cover;
   background-position: center;
-  padding: 3.75rem 1.25rem 1.25rem 1.25rem;
+  /* padding: 3.75rem 1.25rem 1.25rem 1.25rem;
   filter: grayscale(1); */
   background-color: #bbb;
   color: black;
-}
-
-.front img {
-  max-width: 100%;
-  max-height: 100%;
 }
 
 /* .front .btn {
