@@ -263,15 +263,20 @@ nav {
 }
 
 /*media queries*/
-@media only screen and (min-width: 375px) {
-  .promo-card {
-    width: 320px;
+@media only screen and (max-width: 374px) {
+  .back {
+    padding: 1.25rem;
+    gap: 0.3rem;
   }
 }
 
 @media only screen and (min-width: 375px) {
   .promo-container {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .promo-card {
+    width: 320px;
   }
 }
 
