@@ -140,7 +140,7 @@ nav {
   width: 250px;
   height: 515px;
   background: transparent;
-  margin: auto;
+  /* margin: auto; */
   perspective: 1000px;
   /* -webkit-perspective: 1000px;
   -moz-perspective: 1000px; */
@@ -169,7 +169,7 @@ nav {
 }
 
 .front {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
@@ -177,21 +177,28 @@ nav {
   background-size: cover;
   background-position: center;
   padding: 3.75rem 1.25rem 1.25rem 1.25rem;
-  filter: grayscale(1);
+  filter: grayscale(1); */
+  background-color: #bbb;
+  color: black;
 }
 
-.front .btn {
+.front img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* .front .btn {
   width: 100px;
   cursor: pointer;
-}
+} */
 
 .back {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 1.1rem; */
   background: #666362;
   color: #fff;
-  padding: 1.25rem 2.5rem;
+  /* padding: 1.25rem 2.5rem; */
   transform: rotateY(180deg);
   /* -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg); */
