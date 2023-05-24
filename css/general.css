@@ -354,9 +354,14 @@ footer span {
   margin-bottom: 5px;
 }
 
+.img-container {
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
 .img-container img {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 0;
 }
@@ -390,7 +395,7 @@ footer span {
 @media only screen and (min-width: 768px) {
   .footer-container {
     padding: 3rem 7rem;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .footer-left-top span {
@@ -399,6 +404,12 @@ footer span {
 
   .footer-right-bottom {
     padding-bottom: 0rem;
+  }
+
+  .footer-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
   }
 }
 
