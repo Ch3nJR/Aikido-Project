@@ -362,6 +362,10 @@ footer span {
   border-radius: 0;
 }
 
+.img-container span {
+  font-size: 0.9rem;
+}
+
 .footer-left-top,
 .footer-right-bottom {
   font-size: 1.2rem;
