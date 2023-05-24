@@ -16,7 +16,7 @@ ScrollReveal({
 });
 
 //target elements, and specify options to create reveal animations
-ScrollReveal().reveal(".left-landing-box", {
+ScrollReveal().reveal(".left-landing-box, .testimonial-header, .promo-header", {
   delay: 200,
   origin: "top",
 });
@@ -31,11 +31,6 @@ ScrollReveal().reveal(".right-landing-box, .benefit-right", {
   delay: 500,
   origin: "right",
 });
-
-// ScrollReveal().reveal(".sec-01 .image, .info", {
-//   delay: 600,
-//   origin: "bottom",
-// });
 
 ScrollReveal().reveal(".feature, .testimonial, .promo-card", {
   delay: 500,
