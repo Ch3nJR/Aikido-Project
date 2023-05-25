@@ -26,12 +26,13 @@
     <div
       class="right-nav-links animate__animated animate__fadeInLeft animate__slower"
     >
-      <a href="resourcesMP.html">Resources</a>
-      <a href="product.html">Products</a>
-      <a href="location.html">Location</a>
       <a href="about.html">About</a>
       <a href="hiring.html">Hiring</a>
+      <a href="location.html">Location</a>
+      <a href="product.html">Products</a>
+      <a href="resourcesMP.html">Resources</a>
       <a href="trial.html">Trial</a>
+      <a href="promotion.html">Promo</a>
     </div>
   </div>
 
@@ -47,11 +48,6 @@
     $("body").addClass("scroll-lock");
     $("nav").addClass("d-none");
     $("#nav-modal").fadeToggle("slow");
-    ScrollReveal().reveal(".left-nav-links, .right-nav-links", {
-      delay: 500,
-      origin: "left",
-      interval: 200,
-    });
   });
 
   $(".spanlist").on("mouseenter", function () {
@@ -67,7 +63,5 @@
     $("html").removeClass("scroll-lock");
     $("body").removeClass("scroll-lock");
     $("nav").removeClass("d-none");
-    ScrollReveal().clean(".left-nav-links, .right-nav-links");
-    console.log("closing");
   });
 </script>
