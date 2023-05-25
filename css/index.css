@@ -152,7 +152,7 @@ nav {
   transform-style: preserve-3d;
 }
 
-.promo-card:hover .promo-card-inner {
+.flip-card {
   transform: rotateY(180deg);
 }
 
@@ -168,22 +168,27 @@ nav {
 .front {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
+  background-image: url(../imgs/promo1.jpg);
+  background-size: cover;
+  background-position: center;
   padding: 3.75rem 1.25rem 1.25rem 1.25rem;
-  background-color: #666362;
-  color: #fff;
+  filter: grayscale(1);
 }
 
-.front .btn {
+.promo-btn .btn {
   width: 100px;
   cursor: pointer;
 }
 
 .back {
-  background-image: url(../imgs/promo1.jpg);
-  background-position: center;
-  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  background: #666362;
+  color: #fff;
+  padding: 1.25rem 2.5rem;
   transform: rotateY(180deg);
 }
 

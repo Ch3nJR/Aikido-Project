@@ -1,12 +1,3 @@
-const buttons = document.querySelectorAll("button");
-
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const faq = button.nextElementSibling;
-    faq.classList.toggle("show");
-  });
-});
-
 //To create reveal animations
 ScrollReveal({
   //reset: true,
@@ -41,4 +32,32 @@ ScrollReveal().reveal(".feature, .testimonial, .promo-card", {
 ScrollReveal().reveal(".faq-title, .questions-container", {
   delay: 500,
   origin: "top",
+});
+
+/*Promotion */
+//all flip btns
+const flipBtns = document.getElementsByClassName("flip-btn");
+const front = document.getElementsByClassName("front");
+
+//for each flip btn
+Array.from(flipBtns).forEach((flipBtn) => {
+  //add a click event handler
+  flipBtn.addEventListener("click", () => {
+    //find front that is linked to
+    //find through parent element
+    //find previous sibling element
+    //from sibling element go down to child with .front class name
+    //flips card
+    flipBtn.parentNode.previousElementSibling.classList.toggle("flip-card");
+  });
+});
+
+/*FAQ*/
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const faq = button.nextElementSibling;
+    faq.classList.toggle("show");
+  });
 });
