@@ -168,13 +168,11 @@ nav {
 .front {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
-  background-image: url(../imgs/promo1.jpg);
-  background-size: cover;
-  background-position: center;
   padding: 3.75rem 1.25rem 1.25rem 1.25rem;
-  filter: grayscale(1);
+  background-color: #666362;
+  color: #fff;
 }
 
 .front .btn {
@@ -183,12 +181,9 @@ nav {
 }
 
 .back {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  background: #666362;
-  color: #fff;
-  padding: 1.25rem 2.5rem;
+  background-image: url(../imgs/promo1.jpg);
+  background-position: center;
+  background-size: cover;
   transform: rotateY(180deg);
 }
 
