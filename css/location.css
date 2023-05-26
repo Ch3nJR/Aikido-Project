@@ -13,6 +13,9 @@ nav {
 }
 
 /*location section*/
+.location-header {
+  margin-bottom: 2rem;
+}
 .location-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -40,6 +43,15 @@ nav {
   color: #666362;
 }
 
+.preschool-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.preschool-container li {
+  line-height: 3rem;
+}
+
 /*Btn*/
 .btn {
   width: 145px;
@@ -60,10 +72,24 @@ nav {
     padding: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
+
+  .location-header {
+    justify-content: flex-start;
+    padding-left: 2rem;
+  }
+
+  .preschool-container {
+    padding-left: 2rem;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   .location-container {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+
+  .preschool-container {
+    flex-direction: row;
+    gap: 2rem;
   }
 }
