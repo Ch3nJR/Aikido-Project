@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aikiForest</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/product.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <!--Scroll to top btn-->
+    <div class="scrollToTop-btn flex-center">
+      <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!--Navigation bar-->
+    <div id="navBar"></div>
+
+    <!--=======product display=======-->
+    <div id="productsDiv" class="container"></div>
+
+    <!--Footer-->
+    <div id="footer"></div>
+
+    <script type="module">
+      //-----------------------------------IMPORTS + CONFIGURATIONS --------------------------------//
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
+      //IMPORT FIREBASE STORAGE
+      import {
+        getStorage,
+        ref as sRef,
+        uploadBytesResumable,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-storage.js";
+
+      //FIREBASE REALTIME DATABASE
+      import {
+        getDatabase,
+        ref,
+        set,
+        child,
+        get,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAnoH63yEOfzs1jKZCqmYyl3Ftb6tgvt0g",
+        authDomain: "aikidowebsite-d9ae2.firebaseapp.com",
+        databaseURL:
+          "https://aikidowebsite-d9ae2-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "aikidowebsite-d9ae2",
+        storageBucket: "aikidowebsite-d9ae2.appspot.com",
+        messagingSenderId: "586387827383",
+        appId: "1:586387827383:web:afba4c1fd486bdeb193b32",
+        measurementId: "G-HG29YJZH51",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      const realdb = getDatabase();
+
+      function UploadAProduct() {
+        set(ref(realdb, "TheProductRealdb/" + getShortTitle()), {
+          ProductTitle: name.value,
+          Price: price.value,
+          Description: description.value,
+          LinksOfImagesArray: ImageLinksArray,
+        });
+        RestoreBack();
+      }
+
+      var OuterDiv = document.getElementById("productsDiv");
+      var ArrayOfProducts = [];
+      window.addEventListener("load", GetAllProducts);
+
+      function GetAllProducts() {
+        const dbref = ref(realdb);
+
+        get(child(dbref, "TheProductRealdb"))
+          .then((snapshot) => {
+            ArrayOfProducts = Object.values(snapshot.val());
+          })
+          .then(() => {
+            AddAllProducts();
+          });
+      }
+
+      function AddAllProducts() {
+        ArrayOfProducts.forEach((prod, i) => {
+          if (prod.LinksOfImagesArray) {
+            AddAProduct(prod, i);
+          }
+        });
+      }
+
+      function AddAProduct(product, index) {
+        let html =
+          `
+          <img src="` +
+          product.LinksOfImagesArray[0] +
+          `" class="thumb mt-2" id="thumb` +
+          index +
+          `">
+          <p class="title flex-center" id="title` +
+          index +
+          `">` +
+          product.ProductTitle +
+          `</p>
+          ` +
+          `
+          <p class="description">` +
+          product.Description +
+          `</p>
+
+          <p> SGD ` +
+          product.Price +
+          `</p>
+
+          <a href="ipp.html" class="btn">Add To Cart</a>
+          `;
+        let newProd = document.createElement("div");
+        newProd.classList.add("productcard");
+        newProd.id = product.ProductTitle.toUpperCase();
+        newProd.innerHTML = html;
+        OuterDiv.append(newProd);
+      }
+
+      function ProductDescription(array) {
+        document.getElementById("description").innerHTML = product.Description;
+        return ul.outerHTML;
+      }
+    </script>
+    <script src="js/general.js"></script>
+  </body>
+</html>

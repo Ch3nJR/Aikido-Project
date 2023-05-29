@@ -144,6 +144,7 @@
         selBtn.disabled = false;
         addBtn.disabled = false;
         proglab.disabled = false;
+        location.reload();
       }
 
       //-----------------------------------EVENTS--------------------------------//
@@ -256,11 +257,6 @@
           Description: description.value,
           LinksOfImagesArray: ImageLinksArray,
         });
-
-        Swal.fire({
-          icon: "success",
-          text: "Upload Successful!",
-        });
         RestoreBack();
       }
 
@@ -271,19 +267,19 @@
       function GetAllProducts() {
         const dbref = ref(realdb);
 
-        get(child(dbref, "TheProductRealdb")).then((snapshot) => {
-          snapshot.forEach((prod) => {
-            ArrayOfProducts.push(prod.val());
+        get(child(dbref, "TheProductRealdb"))
+          .then((snapshot) => {
+            ArrayOfProducts = Object.values(snapshot.val());
+          })
+          .then(() => {
+            AddAllProducts();
           });
-          AddAllProducts();
-        });
       }
 
       function AddAllProducts() {
-        let i = 0;
-        ArrayOfProducts.forEach((prod) => {
+        ArrayOfProducts.forEach((prod, i) => {
           if (prod.LinksOfImagesArray) {
-            AddAProduct(prod, i++);
+            AddAProduct(prod, i);
           }
         });
       }
@@ -310,21 +306,19 @@
           <p> SGD ` +
           product.Price +
           `</p>
-          
+
           <button class="bn59" id="${
-            "delbtn" + product.ProductTitle + Date.now()
+            "delbtn" + product.ProductTitle
           }" style="background-color: red">Delete</button>
           `;
-
         let newProd = document.createElement("div");
         newProd.classList.add("productcard");
         newProd.id = product.ProductTitle.toUpperCase();
         newProd.innerHTML = html;
         OuterDiv.append(newProd);
 
-        const delbtn = document.getElementById(
-          "delbtn" + product.ProductTitle + Date.now()
-        );
+        const delbtn = document.getElementById("delbtn" + product.ProductTitle);
+
         delbtn.addEventListener("click", DelAProduct);
         delbtn.pdtTitle = product.ProductTitle;
       }
@@ -333,21 +327,6 @@
         document.getElementById("description").innerHTML = product.Description;
         return ul.outerHTML;
       }
-
-      let findBox = document.getElementById("find");
-      findBox.addEventListener("keyup", function (evt) {
-        let filter = this.value.toUpperCase();
-        let l = document.getElementsByClassName("productcard");
-        for (var i = 0; i < l.length; i++) {
-          let a = l[i];
-          let value = a.id;
-          if (value.toUpperCase().indexOf(filter) > -1) {
-            l[i].style.display = "";
-          } else {
-            l[i].style.display = "none";
-          }
-        }
-      });
 
       function DelAProduct(evt) {
         let pdtTitle = evt.currentTarget.pdtTitle;
