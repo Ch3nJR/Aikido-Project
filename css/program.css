@@ -112,9 +112,9 @@
   }
 }
 @media only screen and (min-width: 768px) {
-  .desc-box {
+  /* .desc-box {
     width: 100%;
-  }
+  } */
 
   .desc-text {
     flex-direction: row;
@@ -159,5 +159,11 @@
 @media only screen and (min-width: 1440px) {
   .pw-item {
     gap: 10rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .class {
+    gap: 4rem;
   }
 }

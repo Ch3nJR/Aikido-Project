@@ -17,7 +17,7 @@ ScrollReveal().reveal(".right", {
   origin: "right",
 });
 
-ScrollReveal().reveal(".desc-text-group", {
+ScrollReveal().reveal(".desc-text-group, .schedule", {
   delay: 500,
   origin: "top",
   interval: 200,
