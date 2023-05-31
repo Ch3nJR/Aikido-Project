@@ -118,7 +118,7 @@
 
   .desc-text {
     flex-direction: row;
-    justify-content: center;
+    gap: 2rem;
   }
 
   .schedule {
