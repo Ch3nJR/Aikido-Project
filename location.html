@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>aikiForest</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/location.css" />
@@ -29,7 +33,73 @@
     <div id="navBar"></div>
 
     <!--Heading-->
-    <div class="map-container"></div>
+    <div class="location-imgs flex-center">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="card swiper-slide">
+            <div class="overlay"></div>
+            <div class="info">
+              <span>ARC Main Outlet</span>
+            </div>
+            <img src="imgs/arc1.jpg" alt="card image" />
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="overlay"></div>
+            <div class="info">
+              <span>ARC Main Outlet</span>
+            </div>
+            <img src="imgs/arc2.jpg" alt="card image" />
+          </div>
+
+          <div class="card swiper-slide">
+            <img src="imgs/arc3.jpg" alt="card image" />
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="overlay"></div>
+            <div class="info">
+              <span>SAFRA Main Outlet</span>
+            </div>
+            <img src="imgs/stpy1.jpg" alt="card image" />
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="overlay"></div>
+            <div class="info">
+              <span>SAFRA Main Outlet</span>
+            </div>
+            <img src="imgs/stpy2.jpg" alt="card image" />
+          </div>
+
+          <div class="card swiper-slide">
+            <img src="imgs/stpy3.jpg" alt="card image" />
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="overlay"></div>
+            <div class="info">
+              <span>Rivervale Main Outlet</span>
+            </div>
+            <img src="imgs/rv1.jpg" alt="card image" />
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="overlay"></div>
+            <div class="info">
+              <span>Rivervale Main Outlet</span>
+            </div>
+            <img src="imgs/rv2.jpg" alt="card image" />
+          </div>
+
+          <div class="card swiper-slide">
+            <img src="imgs/rv3.jpg" alt="card image" />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
 
     <!--Locations-->
     <section>
@@ -158,6 +228,8 @@
 
     <!--Footer-->
     <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <!-- <script src="js/whatsapp.js"></script> -->
     <script src="js/general.js"></script>

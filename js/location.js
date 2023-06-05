@@ -1,3 +1,33 @@
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 10,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+    },
+
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+  },
+});
+
 //To create reveal animations
 ScrollReveal({
   //reset: true,
