@@ -1,4 +1,7 @@
 /*swiper section*/
+.container {
+  position: relative;
+}
 .location-imgs {
   flex-direction: column;
   max-width: 1700px;
@@ -72,6 +75,40 @@
   filter: grayscale(0);
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: black;
+}
+
+.popup-img {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.popup-img i {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.popup-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 750px;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
 /*location section*/
 .location-header {
   margin-bottom: 1rem;
@@ -119,6 +156,13 @@
 }
 
 /*media queries*/
+/*For modal img*/
+@media only screen and (max-width: 768px) {
+  .popup-img img {
+    width: 95%;
+  }
+}
+
 /*Fix screen set when it hits 500px*/
 @media only screen and (min-width: 500px) and (max-width: 767px) {
   .location-container {

@@ -1,3 +1,4 @@
+//Top swiper
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 10,
   loop: true,
@@ -47,3 +48,15 @@ ScrollReveal().reveal(".location-header", {
   delay: 500,
   origin: "left",
 });
+
+//modal imgs
+document.querySelectorAll(".modal img").forEach((image) => {
+  image.onclick = () => {
+    document.querySelector(".popup-img").style.display = "block";
+    document.querySelector(".popup-img img").src = image.getAttribute("src");
+  };
+});
+
+document.querySelector(".popup-img i").onclick = () => {
+  document.querySelector(".popup-img").style.display = "none";
+};
