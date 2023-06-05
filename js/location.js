@@ -1,6 +1,5 @@
 //Top swiper
 var swiper = new Swiper(".mySwiper", {
-  spaceBetween: 10,
   loop: true,
   pagination: {
     el: ".swiper-pagination",
@@ -15,16 +14,25 @@ var swiper = new Swiper(".mySwiper", {
     320: {
       slidesPerView: 1,
       slidesPerGroup: 1,
+      spaceBetween: 10,
     },
 
     768: {
       slidesPerView: 2,
       slidesPerGroup: 1,
+      spaceBetween: 10,
     },
 
-    1024: {
+    1300: {
       slidesPerView: 3,
       slidesPerGroup: 3,
+      spaceBetween: 10,
+    },
+
+    1440: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 30,
     },
   },
 });
