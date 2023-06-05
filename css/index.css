@@ -191,7 +191,7 @@ nav {
 }
 
 .promo-btn .btn {
-  width: 100px;
+  width: 90px;
   cursor: pointer;
 }
 
@@ -220,7 +220,8 @@ nav {
 }
 
 .back .btn {
-  width: 100px;
+  width: 90px;
+  padding: 0.7rem 0.9rem;
 }
 
 /*FAQ section*/
