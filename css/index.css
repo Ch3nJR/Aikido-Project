@@ -198,7 +198,7 @@ nav {
 .back {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
   background: #666362;
   color: #fff;
   padding: 1.25rem;
@@ -294,7 +294,6 @@ nav {
 @media only screen and (max-width: 374px) {
   .back {
     padding: 1.25rem;
-    gap: 0.3rem;
   }
 
   .question p.show {
