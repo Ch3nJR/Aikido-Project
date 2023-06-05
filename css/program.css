@@ -87,9 +87,14 @@
   line-height: 1.5rem;
 }
 
-.pw-text a {
+.pw-text a i {
   font-size: 1.6rem;
   color: #666362;
+}
+
+.btn {
+  width: 148px;
+  padding: 0.8rem 1rem;
 }
 
 .pw-img {
@@ -141,10 +146,6 @@
     padding-top: 5rem;
     padding-bottom: 5rem;
     flex-direction: row-reverse;
-  }
-
-  .pw-container {
-    gap: 15rem;
   }
 
   .pw-item {
