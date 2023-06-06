@@ -38,7 +38,7 @@
 
 .title {
   color: black;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: bold;
   padding-left: 5px;
   padding-right: 5px;
@@ -47,7 +47,8 @@
 }
 
 .btn {
-  width: 130px;
+  width: 110px;
+  padding: 0.5rem 0.7rem;
 }
 
 @media only screen and (min-width: 1416px) {
