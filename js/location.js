@@ -46,7 +46,7 @@ ScrollReveal({
 });
 
 //target elements, and specify options to create reveal animations
-ScrollReveal().reveal(".location, .preschool-container ul", {
+ScrollReveal().reveal(".location, .location-imgs, .preschool-container ul", {
   delay: 500,
   origin: "bottom",
   interval: 200,
