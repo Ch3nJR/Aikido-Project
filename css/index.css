@@ -1,16 +1,10 @@
-nav .logo,
-nav a,
-nav i {
-  color: #fff;
-}
-
 nav {
   position: absolute;
 }
 
 /*Top landing section*/
 .landing-container {
-  background-image: url("../imgs/landingimage3.jpg");
+  background-image: url("../imgs/landingimage.jpg");
   background-position: 70% 30%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +13,6 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  filter: grayscale(100%);
 }
 
 .left-landing-box {
@@ -28,7 +21,7 @@ nav {
   gap: 1rem;
   overflow: hidden;
   padding: 0rem 3rem;
-  color: #fff;
+  color: #666362;
 }
 
 .left-landing-box p {
@@ -291,6 +284,25 @@ nav {
 }
 
 /*media queries*/
+/*Background image sizing*/
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .landing-container {
+    background-position: 78% 22%;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 700px) {
+  .landing-container {
+    background-position: 80% 20%;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1024px) {
+  .landing-container {
+    background-position: 60% 40%;
+  }
+}
+
 @media only screen and (max-width: 374px) {
   .back {
     padding: 1.25rem;
