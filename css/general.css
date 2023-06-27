@@ -13,6 +13,8 @@ html {
 body {
   background-color: #fff;
   color: #666362;
+  min-height: 100vh;
+  position: relative;
 }
 
 a {
@@ -282,6 +284,8 @@ nav i:hover,
   color: #fff;
   gap: 0.7rem;
   padding: 2rem 0rem;
+  position: absolute;
+  bottom: 0;
 }
 
 footer span {
