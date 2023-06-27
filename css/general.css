@@ -51,36 +51,6 @@ p {
   opacity: 1;
 }
 
-/*Whatsapp button*/
-.wa-btn {
-  z-index: 99999;
-  position: fixed;
-  bottom: 20px;
-  left: 0;
-  display: inline-flex;
-  align-items: center;
-  width: auto;
-  max-width: 32px;
-  height: 32px;
-  background-color: #b7cc00;
-  color: white;
-  border-radius: 60px;
-  overflow: hidden;
-  opacity: 0;
-  -webkit-transition: max-width 0.5s;
-  transition: max-width 0.5s;
-}
-
-.wa-btn:hover {
-  max-width: 300px;
-}
-
-.wa-btn.active {
-  left: 20px;
-  pointer-events: all;
-  opacity: 1;
-}
-
 .btn {
   color: #fff;
   background-color: #101010ac;
