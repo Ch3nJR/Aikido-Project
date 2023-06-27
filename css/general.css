@@ -59,9 +59,10 @@ p {
   font-size: 0.8rem;
   font-weight: 500;
   display: inline-block;
-  padding: 1rem 1.2rem;
+  padding: 0.9rem 1rem;
   letter-spacing: 1px;
   width: 115px;
+  text-align: center;
 }
 
 /*Container + Sections*/
