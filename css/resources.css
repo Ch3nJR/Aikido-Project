@@ -17,6 +17,9 @@ button {
 
 .btn {
   width: 110px;
+}
+
+.border {
   border: 1px solid black;
 }
 
