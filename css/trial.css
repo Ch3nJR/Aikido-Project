@@ -6,12 +6,6 @@ button:hover {
   cursor: pointer;
 }
 
-.header-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
 /*Contact Section*/
 .form-section {
   padding-top: 2rem;
