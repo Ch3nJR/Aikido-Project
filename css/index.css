@@ -303,6 +303,12 @@ nav {
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  .landing-container {
+    background-position: center;
+  }
+}
+
 @media only screen and (max-width: 374px) {
   .back {
     padding: 1.25rem;
