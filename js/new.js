@@ -14,19 +14,18 @@ var swiper = new Swiper(".mySwiper", {
     320: {
       slidesPerView: 1,
       slidesPerGroup: 1,
-      spaceBetween: 10,
     },
 
     768: {
       slidesPerView: 2,
       slidesPerGroup: 2,
-      spaceBetween: 10,
+      spaceBetween: 15,
     },
 
     1300: {
       slidesPerView: 3,
       slidesPerGroup: 3,
-      spaceBetween: 10,
+      spaceBetween: 30,
     },
 
     1440: {
@@ -35,4 +34,14 @@ var swiper = new Swiper(".mySwiper", {
       spaceBetween: 30,
     },
   },
+});
+
+/*FAQ*/
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const faq = button.nextElementSibling;
+    faq.classList.toggle("show");
+  });
 });
