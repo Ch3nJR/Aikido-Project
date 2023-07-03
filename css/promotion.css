@@ -113,3 +113,9 @@
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
 }
+
+@media only screen and (min-width: 1600px) {
+  .promo-container {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
