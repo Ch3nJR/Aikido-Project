@@ -25,3 +25,8 @@
 .privacy-content {
   gap: 3rem;
 }
+
+li {
+  list-style-type: disc;
+  margin-left: 1rem;
+}
