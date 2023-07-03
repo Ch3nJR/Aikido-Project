@@ -3,12 +3,10 @@ nav {
 }
 
 #cta-lp {
-  padding: 0.5rem;
   width: 160px;
 }
 
 .lm-btn {
-  padding: 0.5rem;
   width: 110px;
 }
 
@@ -18,8 +16,7 @@ nav {
 }
 
 #last-cta {
-  padding: 0.6rem;
-  width: 110px;
+  width: 115px;
 }
 
 /*Top landing section*/

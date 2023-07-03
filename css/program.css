@@ -60,8 +60,6 @@
   padding-top: 3rem;
 }
 
-/*Program intro section*/
-
 /*Programs & Workshop section*/
 .pw-container {
   flex-direction: column;
@@ -93,8 +91,7 @@
 }
 
 .btn {
-  width: 148px;
-  padding: 0.8rem 1rem;
+  width: 130px;
 }
 
 .pw-img {
