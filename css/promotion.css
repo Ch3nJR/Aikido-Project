@@ -4,7 +4,7 @@
 }
 .promo-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
   max-width: 100%;
   gap: 2rem;
 }
@@ -64,7 +64,8 @@
 }
 
 .promo-btn .btn {
-  width: 90px;
+  padding: 0.6rem;
+  width: 75px;
   cursor: pointer;
 }
 
@@ -105,6 +106,12 @@
 
   .promo-card {
     width: 320px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .promo-container {
+    padding-bottom: 4rem;
   }
 }
 
