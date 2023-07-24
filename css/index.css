@@ -28,6 +28,10 @@ nav {
   line-height: 1.5rem;
 }
 
+#trial-btn {
+  width: 100px;
+}
+
 /*Features section*/
 .feature-container {
   display: grid;
@@ -184,7 +188,7 @@ nav {
 }
 
 .promo-btn .btn {
-  width: 90px;
+  width: 70px;
   cursor: pointer;
 }
 
