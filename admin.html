@@ -24,38 +24,138 @@
 
     <section class="sec-02">
       <div class="container">
-        <h3 class="section-title">Add Product Here</h3>
+        <h3 class="section-title">Add Promotions Here</h3>
         <div class="listingcontent">
           <div class="box-container">
-            <label><b>Product Name:</b></label>
+            <label><b>Promotions Name:</b></label>
             <input id="nameinp" type="text" placeholder="Name" />
           </div>
 
           <div class="box-container">
-            <label><b>Product Price:</b></label>
+            <label><b>Promotions Price:</b></label>
             <input id="priceinp" type="text" placeholder="Price" />
           </div>
 
           <div class="box-container">
-            <label id="pdlab"><b>Product Description :</b></label>
+            <label><b>Promotion Link:</b></label>
+            <input
+              id="promolinkinp"
+              type="text"
+              placeholder="Eg. www.test.com"
+            />
+          </div>
+
+          <div class="box-container">
+            <label><b>Link Caption:</b></label>
+            <input id="linkcapinp" type="text" placeholder="Eg. Sign Up" />
+          </div>
+
+          <div class="box-container">
+            <label id="pdlab"><b>Promotions Description :</b></label>
             <textarea id="desarea"></textarea><br /><br />
           </div>
           <div id="imagesDiv"></div>
         </div>
 
-        <div id="controldiv">
-          <label id="uploadstat" hidden>Uploading Image</label>
-          <button id="loadlab" class="bn59">Clear Images</button>
-          <button id="selimgsbtn" class="bn59">Select Images</button>
-          <button id="addprodbtn" class="bn59">Add Product</button>
-        </div>
+        <input
+          class="imgInp"
+          type="file"
+          id="testImg"
+          name="img"
+          accept="image/png, image/jpeg, image/jpg, image/gif"
+        />
+
+        <button class="upload-btn btn">Upload</button>
+
+        <img class="testImg" src="" alt="" />
       </div>
     </section>
 
     <!--=======product display=======-->
     <div id="productsDiv" class="container"></div>
 
+    <!-- Firebase services are still in test mode, and need to be transitioned to locked mode in the future, for realtimeDB and storage -->
     <script type="module">
+      // Import the functions you need from the SDKs you need (https://firebase.google.com/docs/web/learn-more#available-libraries)
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+      import {
+        getStorage,
+        ref as strRef,
+        uploadBytes,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+      import {
+        getDatabase,
+        ref as DatabaseRef,
+        set,
+        child,
+        get,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBpX4VZrjnFPrAi7Rwdjpz2p7_ZlGzIFk4",
+        authDomain: "aikido-test-90953.firebaseapp.com",
+        projectId: "aikido-test-90953",
+        storageBucket: "aikido-test-90953.appspot.com",
+        // The value of `databaseURL` depends on the location of the database
+        databaseURL:
+          "https://aikido-test-90953-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        messagingSenderId: "763006449505",
+        appId: "1:763006449505:web:cd3895906b924be58a3720",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      // Initialize Cloud Storage and get a reference to the service
+      const storage = getStorage(app);
+
+      $(".upload-btn").click(function () {
+        let img = $(".imgInp").prop("files")[0];
+        let imgRef = strRef(storage, "images/" + img.name);
+
+        uploadBytes(imgRef, img).then((snapshot) => {
+          // Upload completed successfully, now we can get the download URL
+          getDownloadURL(snapshot.ref).then((downloadURL) => {
+            $(".testImg").attr("src", downloadURL);
+            setPromoData(
+              $("#nameinp").val(),
+              $("#priceinp").val(),
+              $("#desarea").val(),
+              snapshot.ref._location.path_,
+              $("#promolinkinp").val(),
+              $("#linkcapinp").val()
+            );
+          });
+        });
+      });
+
+      // Initialize Realtime Database and get a reference to the service
+      const database = getDatabase(app);
+      function setPromoData(
+        promotionName,
+        promotionPrice,
+        promotionDescription,
+        promotionImageRef,
+        promotionLink,
+        promotionLinkText
+      ) {
+        console.log(promotionImageRef);
+        set(DatabaseRef(database, "promotions/" + promotionName), {
+          promo_name: promotionName,
+          promo_price: promotionPrice,
+          promo_desc: promotionDescription,
+          promo_img_ref: promotionImageRef,
+          promo_link: promotionLink ? promotionLink : null,
+          promo_link_txt: promotionLinkText,
+        });
+      }
+    </script>
+
+    <!-- <script>
       /*Variables & References*/
       var Files = [];
       var FileReaders = [];
@@ -148,9 +248,9 @@
       }
 
       //-----------------------------------EVENTS--------------------------------//
-      selBtn.addEventListener("click", OpenFileDialog);
-      addBtn.addEventListener("click", UploadAllImages);
-      proglab.addEventListener("click", ClearImages);
+      // selBtn.addEventListener("click", OpenFileDialog);
+      // addBtn.addEventListener("click", UploadAllImages);
+      // proglab.addEventListener("click", ClearImages);
 
       //-----------------------------------UPLOAD TO FIREBASE--------------------------------//
 
@@ -208,45 +308,6 @@
           }
         );
       }
-
-      //-----------------------------------IMPORTS + CONFIGURATIONS --------------------------------//
-
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
-      //IMPORT FIREBASE STORAGE
-      import {
-        getStorage,
-        ref as sRef,
-        uploadBytesResumable,
-        getDownloadURL,
-      } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-storage.js";
-
-      //FIREBASE REALTIME DATABASE
-      import {
-        getDatabase,
-        ref,
-        set,
-        child,
-        get,
-        update,
-        remove,
-      } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyAnoH63yEOfzs1jKZCqmYyl3Ftb6tgvt0g",
-        authDomain: "aikidowebsite-d9ae2.firebaseapp.com",
-        databaseURL:
-          "https://aikidowebsite-d9ae2-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "aikidowebsite-d9ae2",
-        storageBucket: "aikidowebsite-d9ae2.appspot.com",
-        messagingSenderId: "586387827383",
-        appId: "1:586387827383:web:afba4c1fd486bdeb193b32",
-        measurementId: "G-HG29YJZH51",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-
-      const realdb = getDatabase();
 
       //----------------------UPLOAD A PRODUCT---------------------
 
@@ -340,6 +401,6 @@
           location.reload();
         });
       }
-    </script>
+    </script> -->
   </body>
 </html>
